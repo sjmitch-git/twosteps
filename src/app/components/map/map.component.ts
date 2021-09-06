@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
 import * as L from 'leaflet';
-//const L = require('leaflet') as object;
 
 @Component({
   selector: '[app-map]',
