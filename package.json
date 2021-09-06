@@ -11,7 +11,9 @@
     "dev:ssr": "ng run twosteps:serve-ssr",
     "serve:ssr": "node dist/twosteps/server/main.js",
     "build:ssr": "ng build && ng run twosteps:server",
-    "prerender": "ng run twosteps:prerender"
+    "prerender": "ng run twosteps:prerender",
+    "start:heroku": "node dist/twosteps/server/main",
+    "postinstall": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +28,7 @@
     "@angular/router": "~12.2.3",
     "@angular/service-worker": "~12.2.3",
     "@nguniversal/express-engine": "^12.1.0",
+    "compression": "^1.7.4",
     "express": "^4.15.2",
     "leaflet": "^1.7.1",
     "ngx-twitter-timeline": "^0.1.5",

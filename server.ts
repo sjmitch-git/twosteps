@@ -13,6 +13,7 @@ export function app(): express.Express {
   const server = express();
   const distFolder = join(process.cwd(), 'dist/twosteps/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
+  const compression = require('compression');
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
   server.engine('html', ngExpressEngine({
@@ -21,6 +22,7 @@ export function app(): express.Express {
 
   server.set('view engine', 'html');
   server.set('views', distFolder);
+  server.use(compression());
 
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
