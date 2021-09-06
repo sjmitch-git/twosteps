@@ -1,0 +1,223 @@
+<div class="container">
+  <div class="row">
+    <div class='mx-auto col-12 col-lg-8' *ngIf="errors">
+      <error [msg]='errors'></error>
+    </div>
+    <div class='text-center' *ngIf="loading">
+        <loading></loading>
+    </div>
+  </div>
+  
+    <div class="row" *ngIf="fsq.venue">
+        <nav aria-label="breadcrumb" class="d-flex justify-content-center mb-4">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item text-uppercase">
+                  <a [routerLink]="['/trending']" [queryParams]="{lon:fsq.venue.location.lng,lat:fsq.venue.location.lat}">{{fsq.venue.location.city || fsq.venue.location.postalCode || fsq.venue.location.country}}</a>
+                </li>
+              <li class="breadcrumb-item" *ngIf='fsq.venue.categories'>
+                <a [routerLink]="['/search']" [queryParams]="{lon:fsq.venue.location.lng,lat:fsq.venue.location.lat,c:fsq.venue.categories[0].id,n:fsq.venue.categories[0].pluralName}">
+                    <span class="text-uppercase" >{{fsq.venue.categories[0].pluralName}}</span>
+                </a>
+              </li>
+              <!-- <li class="breadcrumb-item active" aria-current="page">{{fsq.venue.name}}</li> -->
+            </ol>
+        </nav>
+        <div class="col-12">
+            <h1 class='text-capitalize text-center display-3 mb-4'>{{fsq.venue.name}}</h1>
+            <div *ngIf='fsq.venue.categories' class="justify-content-center d-flex">
+              <p *ngFor="let item of fsq.venue.categories" class='me-3'>
+                  <span class="text-uppercase" >{{item.name}}</span>
+               </p>
+          </div>
+            <p class="lead col-12 col-lg-8 mx-auto text-center" *ngIf="fsq.venue.description">
+                {{fsq.venue.description}}
+            </p>
+            <p *ngIf='fsq.venue.location' class="text-center">
+                {{fsq.venue.location.formattedAddress.join(', ')}}
+            </p>
+            
+            <div class='text-center'>
+
+              <p *ngIf='fsq.venue.rating'>
+               <span class='display-1' [style.color]="'#' + fsq.venue.ratingColor">
+                {{fsq.venue.rating}} 
+               </span><sup>/10</sup>
+              </p>
+
+              <p class='text-success h3' *ngIf='fsq.venue.likes && fsq.venue.likes.count > 0'>
+                {{fsq.venue.likes.count | number}} user likes
+              </p>
+  
+              <p class='text-danger h3' *ngIf='fsq.venue.dislikes'>
+                  {{fsq.venue.dislikes | number}} user dislikes
+              </p>
+  
+            </div>
+
+           
+            
+
+            <div class='text-center mb-5' *ngIf='fsq.venue.gallery'>
+              <div class='mx-auto p-2 d-flex justify-content-center'>
+                <div *ngFor="let item of fsq.venue.gallery" class=''>
+                  <figure class='figure mb-0 mx-2'>
+                    <img [src]='item.src' class='img-fluid' />
+                  </figure>
+                </div>
+              </div>
+            </div>
+
+            
+
+            <!-- TIPS -->
+          <div id='tips' *ngIf='fsq.venue._tips' class="mb-5 mx-auto col-12 col-lg-8">
+            <div class='mb-2'>
+              <h4 class='h4 mb-3 text-muted'>User Tips</h4>
+            </div>
+            <blockquote class='blockquote p-2 rounded bg-white' *ngFor='let tip of fsq.venue._tips'>
+              <div class='d-flex'>
+                <p class='p mb-0 pr-4 w-100 lang-{{tip.lang}} tip-{{tip.authorInteractionType}}'>
+                {{tip.text}}
+
+                <small class='small d-block lang-en' *ngIf='tip.likes.summary'>
+                  <strong>{{tip.likes.summary}}</strong>
+                </small>
+
+                <small class='small d-block lang-en' *ngIf='tip.agreeCount'>
+                  <span class='text-success'>{{tip.agreeCount}} users agree</span>
+                </small>
+
+                <small class='small d-block lang-en' *ngIf='tip.disagreeCount'>
+                  <span class='text-danger'>{{tip.disagreeCount}} users disagree</span>
+                </small>
+
+              </p>
+              </div>
+              <footer class="blockquote-footer mt-2 text-end">
+                <cite>{{tip.user.firstName}} {{tip.user.lastName}} - {{tip.createdAt * 1000 | date}}</cite>
+              </footer>
+            </blockquote>
+          </div>
+
+          <div *ngIf='fsq.venue.hierarchy' class="text-center mb-4">
+            <h4 class='h4 mb-2 text-muted text-center'>See also</h4>
+            <div class="col-12 d-flex justify-content-center">
+              <a *ngFor="let item of fsq.venue.hierarchy" class='me-3' [routerLink]="['/venue']" [queryParams]="{id:item.id}">
+                  <span class="text-uppercase" >{{item.name}}</span>
+              </a>
+            </div>
+          </div>
+
+          <div class='col-12 col-lg-8 mx-auto mb-5' *ngIf='fsq.venue.attributes?.groups?.length'>
+            <h4 class='h4 mb-2 w-100 text-muted'>Venue Info</h4>
+            <div class='d-flex flex-wrap'>
+              <p *ngFor='let attribute of fsq.venue.attributes.groups' class='badge rounded bg-dark p-2 text-white m-1 {{attribute.type}}'>
+                <span *ngFor='let item of attribute.items' class='d-inline-block px-1'><span *ngIf='item.displayName != item.displayValue'>{{item.displayName}}:</span> {{item.displayValue}}</span>
+              </p>
+            </div>
+          </div>
+
+          <div *ngIf='fsq.venue.hours' class='mb-4 mx-auto col-12 col-lg-8'>
+            <h4 class='h4 mb-3 w-100 text-muted'>Opening Hours</h4>
+            <div>
+              <p class='h5'>
+                <span [ngClass]='{"text-danger": !fsq.venue.hours.isOpen, "text-success": fsq.venue.hours.isOpen}'>{{fsq.venue.hours.status || "Closed"}}</span>
+              </p>
+              <p class='h5' *ngIf='fsq.venue.hours.isLocalHoliday'>
+                <span class='text-warning'>Today is a local holiday</span>
+              </p>
+              <p class="mb-2 pb-2" *ngFor='let item of fsq.venue.hours.timeframes'>
+                <span class=''>{{item.days}}</span> 
+                <span *ngFor='let x of item.open' class='float-end clear-end'>{{x.renderedTime === "None" ? "Closed" : x.renderedTime}}</span>
+              </p>
+            </div>
+           <!--  <span class='float-right text-lowercase ml-4' *ngIf='venue.distance.value'>
+                  <i class='fa fa-fw fa-crosshairs'></i> 
+                  {{venue.distance.value}} {{venue.distance.unit}}
+              </span> -->
+          </div>
+
+            <div id='contacts' *ngIf='fsq.venue.contact?.length'  class='mb-4 mx-auto col-12 col-lg-8'>
+
+                <h4 class='h4 mb-3 text-muted'>Contact</h4>
+      
+                <div class=''>
+      
+                  <dl class='col-12 col-md-6' *ngIf='fsq.venue.contact.phone'>
+                    <dt class='text-muted'>
+                      Phone
+                    </dt>
+                    <dd class=''>
+                      <a href='tel:' href='tel:{{fsq.venue.contact.phone}}' class='noicon' target='_blank'>
+                        {{fsq.venue.contact.formattedPhone}}
+                      </a>
+                    </dd>
+                  </dl>
+      
+                  <dl class='col-12 col-md-6' *ngIf='fsq.venue.contact.twitter'>
+                    <dt class='text-muted'>
+                      Twitter
+                    </dt>
+                    <dd class=''>
+                      <a href='https:twitter.com/{{fsq.venue.contact.twitter}}' class='noicon' target='_blank' rel="noopener">
+                        {{fsq.venue.contact.twitter}}
+                      </a>
+                    </dd>
+                  </dl>
+      
+                  <dl class='col-12 col-md-6' *ngIf='fsq.venue.contact.facebook'>
+                    <dt class='text-muted'>
+                      Facebook
+                    </dt>
+                    <dd class=''>
+                      <a href='https:facebook.com/{{fsq.venue.contact.facebook}}' class='noicon' target='_blank'>
+                        {{fsq.venue.contact.facebookName}}
+                      </a>
+                    </dd>
+                  </dl>
+      
+                  <dl class='col-12 col-md-6' *ngIf='fsq.venue.contact.instagram'>
+                    <dt class='text-muted'>
+                      Instagram
+                    </dt>
+                    <dd class=''>
+                      <a href='https:instagram.com/{{fsq.venue.contact.instagram}}' class='noicon' target='_blank'>
+                        {{fsq.venue.contact.instagram}}
+                      </a>
+                    </dd>
+                  </dl>
+      
+                </div>
+      
+            </div>
+
+            <dl *ngIf='fsq.venue.url' class='mb-5 mx-auto col-12 col-lg-8'>
+              <dt class='text-muted'>
+                Website
+              </dt>
+              <dd>
+                <a href='{{fsq.venue.url}}' target='_blank'>
+                  <span class=''>{{fsq.venue.url}}</span>
+                </a>
+              </dd>
+            </dl>
+
+            <!-- TWEETS -->
+            <div id='tweets' *ngIf='fsq.venue?.contact && fsq.venue.contact?.twitter' class='mb-5 col-12 col-md-8 col-lg-6 mx-auto text-center'>
+              <h4 class='h4 mb-3'>@{{fsq.venue.contact.twitter}} - latest tweet</h4>
+              <div class="mb-3 bg-light p-1">
+                <ngx-twitter-timeline 
+                    [data]="{sourceType: 'url', url: 'https://twitter.com/' + fsq.venue.contact.twitter}"
+                    [opts]="{tweetLimit: 1, height: 300, theme: 'light'}">
+                  </ngx-twitter-timeline>
+              </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row" *ngIf="isBrowser">
+      <div class="col-12 col-lg-8 mx-auto">
+          <div app-map [venue]='fsq.venue'></div>
+      </div>
+  </div>
+</div>

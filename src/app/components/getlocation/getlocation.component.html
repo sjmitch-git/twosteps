@@ -1,0 +1,7 @@
+<ul class="nav justify-content-center">
+    <li class="nav-item p-2" *ngFor="let item of fsq.sections">
+      <button class='btn bg-{{item.colour}}' (click)="selectSection(item)">
+        <img src="../../assets/img/{{item.icon}}.svg" width=40>
+      </button>
+    </li>
+  </ul>

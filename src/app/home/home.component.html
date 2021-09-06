@@ -1,0 +1,24 @@
+<div class='container-fluid'>
+    <div class="row">
+        <div class="col-12 mb-5">
+            <getlocation></getlocation>
+        </div>
+        <div class="text-center col-12 col-lg-8 mx-auto">
+            <h1>
+                {{title}}
+            </h1>
+            <p class='fs-2 fw-light mb-5'>
+                {{description}}
+            </p>
+            <h2>
+                Search popular destinations
+            </h2>
+
+            <div class='mb-5'>
+                <a class='btn btn-dark m-2' [routerLink]="['/trending']" [queryParams]="{lon:item.lon,lat:item.lat}" *ngFor="let item of destinations">
+                    {{item.name}}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

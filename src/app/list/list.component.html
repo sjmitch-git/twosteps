@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-8 col-lg-6 mb-4 text-center mx-auto">
+            <findcategory></findcategory>
+        </div>
+        <div class="col-12">
+            <h1 class='text-capitalize'>{{fsq.section?.name}} <small class='text-muted d-block'>{{title}}</small></h1>
+        </div>
+    </div>
+    <div class='mx-auto col-12 col-lg-8' *ngIf="errors">
+        <error [msg]='errors'></error>
+    </div>
+    <div class='text-center' *ngIf="loading">
+        <loading></loading>
+    </div>
+    <div class="row g-2 mb-5" results></div>
+    <div class="row" *ngIf="isBrowser">
+        <div class="col-12 col-lg-8 mx-auto">
+            <div app-map [data]='fsq.results'></div>
+        </div>
+    </div>
+</div>
