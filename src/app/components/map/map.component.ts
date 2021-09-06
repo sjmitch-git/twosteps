@@ -1,7 +1,9 @@
-import { Component, OnInit, AfterViewInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, OnChanges, SimpleChanges, PLATFORM_ID, Inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 import * as L from 'leaflet';
+//const L = require('leaflet') as object;
 
 @Component({
   selector: '[app-map]',
@@ -16,20 +18,25 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   map?: any;
   markers?: any;
   maptype?: string;
+  isBrowser: boolean = false;
 
   @Input() data?: any[];
   @Input() venue?: any[];
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
-  ) { }
+    private router: Router,
+    @Inject(PLATFORM_ID) platformId: Object,
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+   }
 
   addMarkers = (arr: any[]) => {
     if (this.markers) this.map.removeLayer(this.markers);
     this.markers = L.featureGroup().addTo(this.map);
     if (!arr.length) return;
     let bounds = [];
+    bounds.push({lat:this.lat,lng: this.lon});
     for (let index = 0; index < arr.length; index++) {
       const el = arr[index];
       let lat = el.location.lat;
@@ -64,7 +71,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngAfterViewInit(): void {
-    if (typeof window === "undefined") return;
+    if (!this.isBrowser) return;
     let that = this;
     let originalTile: any = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19});
     
@@ -121,6 +128,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   setVenue = (v: any) => {
+    if (!this.isBrowser) return;
     this.lat = v.location.lat;
     this.lon = v.location.lng;
     let originalTile: any = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19});
