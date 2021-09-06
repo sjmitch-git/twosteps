@@ -4,13 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build  --prod",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "dev:ssr": "ng run twosteps:serve-ssr",
     "serve:ssr": "node dist/twosteps/server/main.js",
-    "build:ssr": "ng build && ng run twosteps:server",
+    "build:ssr": "ng build && ng run twosteps:server && gzipper compress --incremental --exclude jpeg,png,ico ./dist",
     "prerender": "ng run twosteps:prerender",
     "start:heroku": "node dist/twosteps/server/main",
     "postinstall": "npm run build:ssr"

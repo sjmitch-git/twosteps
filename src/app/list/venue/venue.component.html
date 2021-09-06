@@ -203,7 +203,7 @@
             </dl>
 
             <!-- TWEETS -->
-            <div id='tweets' *ngIf='fsq.venue?.contact && fsq.venue.contact?.twitter' class='mb-5 col-12 col-md-8 col-lg-6 mx-auto text-center'>
+            <div id='tweets' *ngIf='isBrowser && fsq.venue?.contact && fsq.venue.contact?.twitter' class='mb-5 col-12 col-md-8 col-lg-6 mx-auto text-center'>
               <h4 class='h4 mb-3'>@{{fsq.venue.contact.twitter}} - latest tweet</h4>
               <div class="mb-3 bg-light p-1">
                 <ngx-twitter-timeline 
