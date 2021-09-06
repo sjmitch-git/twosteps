@@ -68,7 +68,9 @@ export class ShareComponent implements OnInit {
   }
 
   navigate = (href:string) => {
-    window.open(href, 'windowName');
+    if (typeof window !== "undefined") {
+      window.open(href, 'windowName');
+    }
   }
 
   share = (cat:string) => {
