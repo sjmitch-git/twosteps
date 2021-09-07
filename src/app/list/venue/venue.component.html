@@ -39,9 +39,10 @@
             <div class='text-center'>
 
               <p *ngIf='fsq.venue.rating'>
-               <span class='display-1' [style.color]="'#' + fsq.venue.ratingColor">
-                {{fsq.venue.rating}} 
-               </span><sup>/10</sup>
+               <span class='display-1 d-block' [style.color]="'#' + fsq.venue.ratingColor">
+                {{fsq.venue.rating * 10}}%
+               </span>
+               user rating
               </p>
 
               <p class='text-success h3' *ngIf='fsq.venue.likes && fsq.venue.likes.count > 0'>
@@ -126,7 +127,7 @@
               <p class='h5' *ngIf='fsq.venue.hours.isLocalHoliday'>
                 <span class='text-warning'>Today is a local holiday</span>
               </p>
-              <p class="mb-2 pb-2" *ngFor='let item of fsq.venue.hours.timeframes'>
+              <p class="mb-2 pb-2 clearfix" *ngFor='let item of fsq.venue.hours.timeframes'>
                 <span class=''>{{item.days}}</span> 
                 <span *ngFor='let x of item.open' class='float-end clear-end'>{{x.renderedTime === "None" ? "Closed" : x.renderedTime}}</span>
               </p>
@@ -154,7 +155,7 @@
                     </dd>
                   </dl>
       
-                  <dl class='col-12 col-md-6' *ngIf='fsq.venue.contact.twitter'>
+                  <dl class='col-12 col-md-6' *ngIf='fsq.venue.contact.twitter && isBrowser'>
                     <dt class='text-muted'>
                       Twitter
                     </dt>

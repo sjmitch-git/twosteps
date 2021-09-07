@@ -22,6 +22,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { MapComponent } from './components/map/map.component';
 import { FindcategoryComponent } from './components/findcategory/findcategory.component';
 import { ShareComponent } from './components/share/share.component';
+import { BacktotopComponent } from './components/backtotop/backtotop.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ShareComponent } from './components/share/share.component';
     FilterPipe,
     MapComponent,
     FindcategoryComponent,
-    ShareComponent
+    ShareComponent,
+    BacktotopComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

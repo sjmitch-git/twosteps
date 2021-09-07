@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FoursquareService } from "../services/foursquare.service";
 import { UserService } from "../services/user.service";
 import { SeoService } from "../services/seo.service";
+import { ScrolltoService } from "../services/scrollto.service";
 
 @Component({
   selector: 'app-list',
@@ -18,12 +19,14 @@ export class ListComponent implements OnInit {
   loading?: boolean;
   errors?: string;
   isBrowser?: boolean;
+  path?: string;
 
   constructor(
     private route: ActivatedRoute, 
     private router: Router,
     public fsq: FoursquareService,
     private seo: SeoService,
+    public scroll: ScrolltoService,
   ) {
     this.isBrowser = seo.isBrowser;
    }
@@ -38,6 +41,15 @@ export class ListComponent implements OnInit {
     this.loading = false;
   }
 
+  finally = () => {
+    this.loading = false;
+    this.updateSeo(this.fsq.results);
+    if (!this.isBrowser) return;
+    setTimeout(() => {
+      this.scroll.to('page');
+    }, 2000);
+  }
+
   explore = (lon: string, lat:string) => {
     this.loading = true;
     this.errors = '';
@@ -50,8 +62,7 @@ export class ListComponent implements OnInit {
     }, (err) => {
       this.handleError(err)
     }, () => {
-      this.loading = false;
-      this.updateSeo(this.fsq.results);
+      this.finally();
     });
   }
 
@@ -66,12 +77,11 @@ export class ListComponent implements OnInit {
     }, (err) => {
       this.handleError(err)
     }, () => {
-      this.loading = false;
-      this.updateSeo(this.fsq.results, this.title);
+      this.finally();
     });
   }
 
-  updateSeo = (res: any, title?: string) => {
+  updateSeo = (res: any) => {
 
     let city;
     let cc;
@@ -85,9 +95,9 @@ export class ListComponent implements OnInit {
       if (city) break;
     }
 
-    if (title) {
-      if (state) this.seo.setTitle(`${title} - ${city}, ${state}-${cc}`)
-      else this.seo.setTitle(`${title} - ${city}, ${cc}`)
+    if (this.path === 'search') {
+      if (state) this.seo.setTitle(`${this.title} - ${city}, ${state}-${cc}`)
+      else this.seo.setTitle(`${this.title} - ${city}, ${cc}`)
     } else {
       let section = this.capitalizeFirstLetter(this.fsq.section.name);
       if (state) this.seo.setTitle(`${section} Places - ${this.title}, ${state}-${cc}`)
@@ -120,14 +130,14 @@ export class ListComponent implements OnInit {
       this.fsq.radius = params.r || this.fsq.radius;
       this.fsq.lat = params.lat;
       this.fsq.lon = params.lon;
-      let path = this.router.url.split('?')[0].split('/')[1];
-      if (path === 'search') {
+      this.path = this.router.url.split('?')[0].split('/')[1];
+      if (this.path === 'search') {
         this.find(params.lat, params.lon, params.c)
         this.title = params.n;
         this.fsq.section = 'explore';
       } else {
-        this.fsq.section = path;
-        this.fsq.selectSection(path);
+        this.fsq.section = this.path;
+        this.fsq.selectSection(this.path);
         this.explore(params.lat, params.lon)
       }
     });

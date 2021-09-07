@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { FoursquareService } from "../../services/foursquare.service";
 import { SeoService } from "../../services/seo.service";
+import { ScrolltoService } from "../../services/scrollto.service";
 
 @Component({
   selector: 'app-venue',
@@ -21,9 +22,19 @@ export class VenueComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private seo: SeoService,
-    public fsq: FoursquareService
+    public fsq: FoursquareService,
+    public scroll: ScrolltoService,
   ) { 
     this.isBrowser = seo.isBrowser;
+  }
+
+  finally = () => {
+    this.loading = false;
+    this.updateSeo(this.fsq.venue);
+    if (!this.isBrowser) return;
+    setTimeout(() => {
+      this.scroll.to('page');
+    }, 2000);
   }
 
   handleError = (res: any) => {
@@ -37,8 +48,7 @@ export class VenueComponent implements OnInit {
     }, (err) => {
       this.handleError(err)
     }, () => {
-      this.loading = false;
-      this.updateSeo(this.fsq.venue);
+      this.finally();
     });
   }
 
