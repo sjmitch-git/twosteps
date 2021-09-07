@@ -22,10 +22,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.seo.setTitle(this.title)
+    this.seo.setTitle('Two Steps: ' + this.title)
     this.seo.setDescription(this.description)
     this.seo.setKeywords([this.description])
-    this.seo.setImg('./assets/img/brand.png')
+    this.seo.setImg('https://twosteps.herokuapp.com/assets/img/brand.png')
   }
 
 }
