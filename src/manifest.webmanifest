@@ -1,7 +1,7 @@
 {
   "name": "twosteps",
   "short_name": "twosteps",
-  "theme_color": "#1976d2",
+  "theme_color": "#6c757d",
   "background_color": "#f8f9fa",
   "display": "standalone",
   "scope": "./",
