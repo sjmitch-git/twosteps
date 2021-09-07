@@ -2,7 +2,9 @@ import { Component, OnInit, AfterViewInit, Input, OnChanges, SimpleChanges, PLAT
 import { ActivatedRoute, Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
-import * as L from 'leaflet';
+//import * as L from 'leaflet';
+
+declare let L: any;
 
 @Component({
   selector: '[app-map]',
@@ -18,6 +20,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   markers?: any;
   maptype?: string;
   isBrowser: boolean = false;
+  private _L : any;
 
   @Input() data?: any[];
   @Input() venue?: any[];
@@ -60,6 +63,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngOnInit(): void {
+    
     this.route.queryParams.subscribe((params) => {
       if (params.lat && params.lon) {
         this.lat = params.lat;
@@ -93,7 +97,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
         autoPan: true,
         title: 'Drag me to explore!'
       }).addTo(this.map)
-      .on('dragend', function(event){
+      .on('dragend', function(event: any){
         let marker = event.target;
         let pos = marker.getLatLng();
         that.go(pos.lat, pos.lng)
