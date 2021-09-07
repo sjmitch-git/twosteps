@@ -1,4 +1,7 @@
 <input type="text" class='form-control' placeholder='Find nearby' id="categories" name="cat" list="find"  [(ngModel)]="category" (change)='select()' placeholder='Find by category'>
-<datalist id="find">
-	<option *ngFor="let item of categories">{{item.name}}</option>
-</datalist>
+
+	<datalist id="find">
+		<option *ngFor="let item of categories">{{item.name}}</option>
+	</datalist>
+
+

@@ -56,6 +56,48 @@ export class DestinationsService {
       cc: 'au',
       lat: -33.866666666667,
       lon: 151.2
+    },
+    {
+      name: 'Kuala Lumpur',
+      country: 'Singapore',
+      cc: 'my',
+      lat: 3.147778,
+      lon: 101.695278
+    },
+    {
+      name: 'Tokyo',
+      country: 'Japan',
+      cc: 'jp',
+      lat: 35.689722,
+      lon: 139.692222
+    },
+    {
+      name: 'Istanbul',
+      country: 'Turkey',
+      cc: 'tr',
+      lat: 1.3,
+      lon: 103.8
+    },
+    {
+      name: 'Antalya',
+      country: 'Turkey',
+      cc: 'tr',
+      lat: 36.90812,
+      lon: 30.69556
+    },
+    {
+      name: 'Osaka',
+      country: 'Japan',
+      cc: 'jp',
+      lat: 34.693611,
+      lon: 135.501944
+    },
+    {
+      name: 'Seoul ',
+      country: 'South Korea',
+      cc: 'kr',
+      lat: 37.56,
+      lon: 126.99
     }
   ];
 }
