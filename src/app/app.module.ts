@@ -24,6 +24,7 @@ import { FindcategoryComponent } from './components/findcategory/findcategory.co
 import { ShareComponent } from './components/share/share.component';
 import { BacktotopComponent } from './components/backtotop/backtotop.component';
 import { GeonamesComponent } from './components/geonames/geonames.component';
+import { GetnearbyComponent } from './components/getnearby/getnearby.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { GeonamesComponent } from './components/geonames/geonames.component';
     FindcategoryComponent,
     ShareComponent,
     BacktotopComponent,
-    GeonamesComponent
+    GeonamesComponent,
+    GetnearbyComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
