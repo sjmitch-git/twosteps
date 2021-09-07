@@ -14,11 +14,11 @@ export function app(): express.Express {
   const distFolder = join(process.cwd(), 'dist/twosteps/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
   const compression = require('compression');
-  const DIST_FOLDER = join(process.cwd(), 'dist/browser');
 
   const domino = require("domino");
-  const window = domino.createWindow(indexHtml);
-  global['window'] = window;
+  const win = domino.createWindow(indexHtml);
+  global['window'] = win;
+  global["requestAnimationFrame"] = (cb: any) => cb();
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
   server.engine('html', ngExpressEngine({
