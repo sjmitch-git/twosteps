@@ -1,0 +1,18 @@
+User-Agent: *
+Disallow: 
+Disallow: /venue
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot 
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Twitterbot
+Allow: /images
+
+User-agent: facebookexternalhit
+Allow: /images

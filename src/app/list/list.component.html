@@ -19,4 +19,22 @@
             <div app-map [data]='fsq.results'></div>
         </div>
     </div>
+    <div class="row g-2 mb-5">
+        <div class="col-12">
+            <h4 class='text-muted'>
+                Related Links
+            </h4>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of fsq.resultsCategories">
+            <div class="card mb-2">
+                <div class='card-body'>
+                    <h5 class="card-title mb-0">
+                        <a [routerLink]="['/search']" [queryParams]="{lon:fsq.lon,lat:fsq.lat,c:item.id,n:item.pluralName}" class='stretched-link text-reset'>
+                            {{item.pluralName}}
+                        </a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

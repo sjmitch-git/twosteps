@@ -40,7 +40,7 @@
     <div class="card">
         <div class='card-body'>
             <h5 class="card-title">
-                <a [routerLink]="['/venue']" [queryParams]="{id:item.id}" class='stretched-link text-reset'>
+                <a [routerLink]="['/venue']" rel='nofollow' [queryParams]="{id:item.id}" class='stretched-link text-reset'>
                     {{item.name}}
                 </a>
                 <!-- <span *ngIf="item.popularity == 0" title='Most popular with 2Steps users'>⭐</span> <span *ngIf="item.nearest" title='Nearest to your search point'>👣</span> -->

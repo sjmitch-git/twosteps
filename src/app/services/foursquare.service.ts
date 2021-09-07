@@ -32,6 +32,7 @@ export class FoursquareService {
     {id: 'outdoors', name: 'outdoors', icon: 'tree', colour: 'green'}
   ];
   results?: any[];
+  resultsCategories?: any[];
   venue?: any;
   colours: any[] = ['red', 'darkred', 'orange', 'green', 'darkgreen', 'blue', 'darkpurple', 'purple', 'darkpurple', 'cadetblue'];
 
@@ -72,14 +73,20 @@ export class FoursquareService {
 
   processResults = (array: any[]) => {
     this.results = [];
+    let categories = [];
     for (let index = 0; index < array.length; index++) {
       const el = array[index];
+      for (let i = 0; i < el.venue.categories.length; i++) {
+        const cat = el.venue.categories[i];
+        categories.push(cat)
+      } 
       el.venue.distance = el.venue.location.distance;
       el.venue.popularity = index;
       el.venue.icon = this.getIcon(el.venue);
       el.venue.color = this.getColor();
       this.results.push(el.venue);
     }
+    this.resultsCategories = categories.filter((v,i,a)=>a.findIndex(t=>(t.name === v.name))===i)
     this.results.sort( this.compare );
     this.results[0].nearest = true;
   }
