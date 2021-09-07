@@ -16,3 +16,5 @@ Allow: /images
 
 User-agent: facebookexternalhit
 Allow: /images
+
+Sitemap: https://twosteps.herokuapp.com/sitemap.xml

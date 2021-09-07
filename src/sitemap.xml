@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://twosteps.herokuapp.com/</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/trending?lon=2.3522&amp;lat=48.8566</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/trending?lon=-74.006&amp;lat=40.7128</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/trending?lon=-0.1278&amp;lat=51.5074</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/trending?lon=100.5018&amp;lat=13.7563</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/trending?lon=114.1694&amp;lat=22.3193</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/trending?lon=55.2708&amp;lat=25.2048</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/trending?lon=151.2&amp;lat=-33.866666666667</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=2.3522&amp;lat=48.8566&amp;c=4bf58dd8d48988d18f941735&amp;n=Art%20Museums</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=2.3522&amp;lat=48.8566&amp;c=4bf58dd8d48988d16a941735&amp;n=Bakeries</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=2.3522&amp;lat=48.8566&amp;c=4bf58dd8d48988d114951735&amp;n=Bookstores</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=2.3522&amp;lat=48.8566&amp;c=56aa371be4b08b9a8d573547&amp;n=Fountains</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=2.3522&amp;lat=48.8566&amp;c=4bf58dd8d48988d136941735&amp;n=Opera%20Houses</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=2.3522&amp;lat=48.8566&amp;c=4bf58dd8d48988d15a941735&amp;n=Gardens</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=2.3522&amp;lat=48.8566&amp;c=4bf58dd8d48988d143941735&amp;n=Breakfast%20Spots</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=2.3522&amp;lat=48.8566&amp;c=4bf58dd8d48988d164941735&amp;n=Plazas</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=2.3522&amp;lat=48.8566&amp;c=4bf58dd8d48988d1f6941735&amp;n=Department%20Stores</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=2.3522&amp;lat=48.8566&amp;c=4bf58dd8d48988d1c5941735&amp;n=Sandwich%20Places</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=2.3522&amp;lat=48.8566&amp;c=4bf58dd8d48988d1e0931735&amp;n=Coffee%20Shops</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=2.3522&amp;lat=48.8566&amp;c=4bf58dd8d48988d1c3941735&amp;n=Moroccan%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=2.3522&amp;lat=48.8566&amp;c=4bf58dd8d48988d104951735&amp;n=Boutiques</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-74.006&amp;lat=40.7128&amp;c=4e74f6cabd41c4836eac4c31&amp;n=Piers</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-74.006&amp;lat=40.7128&amp;c=4bf58dd8d48988d165941735&amp;n=Scenic%20Lookouts</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-74.006&amp;lat=40.7128&amp;c=4bf58dd8d48988d175941735&amp;n=Gyms%20or%20Fitness%20Centers</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-74.006&amp;lat=40.7128&amp;c=4bf58dd8d48988d159941735&amp;n=Trails</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-74.006&amp;lat=40.7128&amp;c=4bf58dd8d48988d176941735&amp;n=Gyms</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-74.006&amp;lat=40.7128&amp;c=4bf58dd8d48988d163941735&amp;n=Parks</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-74.006&amp;lat=40.7128&amp;c=4bf58dd8d48988d1e2941735&amp;n=Beaches</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d18f941735&amp;n=Art%20Museums</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d10f941735&amp;n=Indian%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d163941735&amp;n=Parks</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d120951735&amp;n=Food%20Courts</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d114951735&amp;n=Bookstores</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d190941735&amp;n=History%20Museums</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d121941735&amp;n=Lounges</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d1f6941735&amp;n=Department%20Stores</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d1e2931735&amp;n=Art%20Galleries</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d1e0931735&amp;n=Coffee%20Shops</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d16d941735&amp;n=Caf%C3%A9s</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d1ce941735&amp;n=Seafood%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d1f5941735&amp;n=Gourmet%20Shops</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=-0.1278&amp;lat=51.5074&amp;c=4bf58dd8d48988d1fa931735&amp;n=Hotels</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d1d1941735&amp;n=Noodle%20Houses</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=56aa371ce4b08b9a8d57356c&amp;n=Beer%20Bars</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d114951735&amp;n=Bookstores</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d116941735&amp;n=Bars</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d149941735&amp;n=Thai%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d10f941735&amp;n=Indian%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d181941735&amp;n=Museums</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=52e81612bcbc57f1066b7a14&amp;n=Palaces</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d1d5941735&amp;n=Hotel%20Bars</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d14a941735&amp;n=Vietnamese%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d15b941735&amp;n=Farms</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d143941735&amp;n=Breakfast%20Spots</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=52f2ab2ebcbc57f1066b8b3c&amp;n=Massage%20Studios</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=56aa371be4b08b9a8d573502&amp;n=Som%20Tum%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=56aa371be4b08b9a8d573520&amp;n=Tour%20Providers</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d1e0931735&amp;n=Coffee%20Shops</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d1fd941735&amp;n=Shopping%20Malls</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d180941735&amp;n=Multiplexes</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d16d941735&amp;n=Caf%C3%A9s</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=52af0bd33cf9994f4e043bdd&amp;n=Hotpot%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=100.5018&amp;lat=13.7563&amp;c=4bf58dd8d48988d1d0941735&amp;n=Dessert%20Shops</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d108941735&amp;n=Dumpling%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d180941735&amp;n=Multiplexes</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=52f2ab2ebcbc57f1066b8b46&amp;n=Supermarkets</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d1cc941735&amp;n=Steakhouses</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d116941735&amp;n=Bars</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d165941735&amp;n=Scenic%20Lookouts</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d1e0931735&amp;n=Coffee%20Shops</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d16a941735&amp;n=Bakeries</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d114951735&amp;n=Bookstores</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d1bc941735&amp;n=Cupcake%20Shops</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d102941735&amp;n=Yoga%20Studios</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d121941735&amp;n=Lounges</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d18f941735&amp;n=Art%20Museums</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d123941735&amp;n=Wine%20Bars</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d16d941735&amp;n=Caf%C3%A9s</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d110941735&amp;n=Italian%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d1d4941735&amp;n=Speakeasies</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=114.1694&amp;lat=22.3193&amp;c=4bf58dd8d48988d127951735&amp;n=Arts%20%26%20Crafts%20Stores</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d180941735&amp;n=Multiplexes</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=5744ccdfe4b0c0459246b4b5&amp;n=Indoor%20Play%20Areas</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d111941735&amp;n=Japanese%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d10c941735&amp;n=French%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d104951735&amp;n=Boutiques</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d1e0931735&amp;n=Coffee%20Shops</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d14e941735&amp;n=American%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d111951735&amp;n=Jewelry%20Stores</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=56aa371be4b08b9a8d573547&amp;n=Fountains</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d145941735&amp;n=Chinese%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d1ce941735&amp;n=Seafood%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d164941735&amp;n=Plazas</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d16a941735&amp;n=Bakeries</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d12f951735&amp;n=Resorts</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d16d941735&amp;n=Caf%C3%A9s</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=52e81612bcbc57f1066b7a25&amp;n=Pedestrian%20Plazas</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d1e2941735&amp;n=Beaches</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=55.2708&amp;lat=25.2048&amp;c=4bf58dd8d48988d121941735&amp;n=Lounges</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d11e941735&amp;n=Cocktail%20Bars</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d149941735&amp;n=Thai%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d163941735&amp;n=Parks</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d16d941735&amp;n=Caf%C3%A9s</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d186941735&amp;n=Liquor%20Stores</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=5032792091d4c4b30a586d5c&amp;n=Concert%20Halls</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=52f2ab2ebcbc57f1066b8b1c&amp;n=Fruit%20%26%20Vegetable%20Stores</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d136941735&amp;n=Opera%20Houses</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d1c4941735&amp;n=Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d1c9941735&amp;n=Ice%20Cream%20Shops</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d114951735&amp;n=Bookstores</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d1ce941735&amp;n=Seafood%20Restaurants</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d137941735&amp;n=Theaters</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d1f2931735&amp;n=Performing%20Arts%20Venues</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d116941735&amp;n=Bars</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://twosteps.herokuapp.com/search?lon=151.2&amp;lat=-33.866666666667&amp;c=4bf58dd8d48988d102941735&amp;n=Yoga%20Studios</loc>
+  <lastmod>2021-09-07T09:08:34+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
