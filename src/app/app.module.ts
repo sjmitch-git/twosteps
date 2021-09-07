@@ -23,6 +23,7 @@ import { MapComponent } from './components/map/map.component';
 import { FindcategoryComponent } from './components/findcategory/findcategory.component';
 import { ShareComponent } from './components/share/share.component';
 import { BacktotopComponent } from './components/backtotop/backtotop.component';
+import { GeonamesComponent } from './components/geonames/geonames.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { BacktotopComponent } from './components/backtotop/backtotop.component';
     MapComponent,
     FindcategoryComponent,
     ShareComponent,
-    BacktotopComponent
+    BacktotopComponent,
+    GeonamesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

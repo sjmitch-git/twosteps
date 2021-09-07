@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public destinationsService: DestinationsService,
-    public seo: SeoService,
+    public seo: SeoService
   ) { 
     this.destinations = destinationsService.data;
   }

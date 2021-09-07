@@ -1,0 +1,44 @@
+<div class='row mb-3'>
+    <div class="col-12 d-flex">
+        <input type='text' [(ngModel)]="q" class='form-control' placeholder='Search for destinations'>
+        <button class='btn btn-primary ms-3' [disabled]='!q.length' (click)='search()'>
+            Search
+        </button>
+    </div>
+</div>
+
+<div class="row justify-content-center" *ngIf="loading">
+    <div class="col-12 col-md-8 col-lg-6">
+        <loading></loading>
+    </div>
+</div>
+
+<div class="row justify-content-center" *ngIf="error">
+    <div class="col-12 col-md-8 col-lg-6">
+        <error [msg]='error'></error>
+    </div>
+</div>
+
+<div class='row g-2'>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of geo.results">
+        <div class="card mb-2">
+            <div class='card-body'>
+                <h5 class="card-title mb-0">
+                    <a [routerLink]="['/trending']" [queryParams]="{lon:item.lng,lat:item.lat}" class='stretched-link text-reset'>
+                        {{item.name}}
+                    </a>
+                </h5>
+                <p class='mb-0'>
+                   {{item.adminName1}}<span *ngIf="item.adminName1">,</span> {{item.countryName}}
+                </p>
+                <p class='mb-0' *ngIf="item.population">
+                    <small>
+                        Population: {{item.population | number }}
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
