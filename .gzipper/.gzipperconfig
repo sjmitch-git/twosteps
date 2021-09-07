@@ -145,9 +145,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\index.html": {
         "revisions": [
           {
-            "lastChecksum": "f9dd4c3f4b1093b784550e8733ee9e02",
+            "lastChecksum": "0113414801b33f031c5fed83aabc4e24",
             "fileId": "1b06aadf-c71d-4694-8cd0-bbc5d2844205",
-            "date": "2021-09-06T13:10:36.916Z",
+            "date": "2021-09-07T06:55:17.895Z",
             "options": {}
           }
         ]
@@ -155,9 +155,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\main.js": {
         "revisions": [
           {
-            "lastChecksum": "1f122ac6b9f09a5858005fa1da90e796",
+            "lastChecksum": "641fb10e50bae5d877f36127fdefc2d2",
             "fileId": "dcd37be9-9143-495f-8ef5-5e92348acfb1",
-            "date": "2021-09-06T13:10:37.032Z",
+            "date": "2021-09-07T06:55:18.159Z",
             "options": {}
           }
         ]
@@ -165,9 +165,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\main.js.map": {
         "revisions": [
           {
-            "lastChecksum": "1c67321c9d903852cf11c7a4c79f71e0",
+            "lastChecksum": "19a1bb9e85fb5bba10dead2b7ef32975",
             "fileId": "f5ac9428-3184-4884-b375-e2cb61d5a589",
-            "date": "2021-09-06T13:10:35.997Z",
+            "date": "2021-09-07T06:55:17.246Z",
             "options": {}
           }
         ]
@@ -195,9 +195,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\ngsw.json": {
         "revisions": [
           {
-            "lastChecksum": "8f4da912873763085c4c97766d0c8734",
+            "lastChecksum": "b91cda40a1f1ffc4933768c9f645faec",
             "fileId": "63245937-971c-4571-8a6a-bafc34a66e48",
-            "date": "2021-09-06T13:10:36.524Z",
+            "date": "2021-09-07T06:55:17.791Z",
             "options": {}
           }
         ]
@@ -315,9 +315,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\server\\main.js": {
         "revisions": [
           {
-            "lastChecksum": "ec6f42170fa358851aec431ca59d78f3",
+            "lastChecksum": "c24ae0413d1dd9fecebdc057d3a5514c",
             "fileId": "1cff0ecf-18b8-41b5-89fc-720c22e6d158",
-            "date": "2021-09-06T13:10:38.477Z",
+            "date": "2021-09-07T06:55:19.527Z",
             "options": {}
           }
         ]
