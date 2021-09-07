@@ -9,7 +9,7 @@ export class GeonamesService {
 
   maxRows: number = 10;
   username: string = 'stephenjmitchell';
-  endpoint: string = 'http://api.geonames.org/searchJSON';
+  endpoint: string = 'https://secure.geonames.org/searchJSON';
   results: any[] = [];
 
   constructor(
