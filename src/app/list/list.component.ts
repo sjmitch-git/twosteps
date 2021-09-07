@@ -105,6 +105,7 @@ export class ListComponent implements OnInit {
     }
     this.seo.setDescription(this.seo.title.getTitle() + ' (' + res?.length + ' results)');
     this.setKeywords(res);
+    this.seo.setImg('https://twosteps.herokuapp.com/assets/img/brand.png')
   }
 
   setKeywords = (res: any) => {
