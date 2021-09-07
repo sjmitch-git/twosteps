@@ -145,9 +145,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\index.html": {
         "revisions": [
           {
-            "lastChecksum": "0113414801b33f031c5fed83aabc4e24",
+            "lastChecksum": "debc4f5da2c6bad5cdb8a6db7f1b886f",
             "fileId": "1b06aadf-c71d-4694-8cd0-bbc5d2844205",
-            "date": "2021-09-07T06:55:17.895Z",
+            "date": "2021-09-07T07:49:42.897Z",
             "options": {}
           }
         ]
@@ -155,9 +155,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\main.js": {
         "revisions": [
           {
-            "lastChecksum": "641fb10e50bae5d877f36127fdefc2d2",
+            "lastChecksum": "ad2f3454d228b968b62dbae9e89ffe96",
             "fileId": "dcd37be9-9143-495f-8ef5-5e92348acfb1",
-            "date": "2021-09-07T06:55:18.159Z",
+            "date": "2021-09-07T07:49:42.915Z",
             "options": {}
           }
         ]
@@ -165,9 +165,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\main.js.map": {
         "revisions": [
           {
-            "lastChecksum": "19a1bb9e85fb5bba10dead2b7ef32975",
+            "lastChecksum": "bc7e696d6490ee7a834381111fc8db3f",
             "fileId": "f5ac9428-3184-4884-b375-e2cb61d5a589",
-            "date": "2021-09-07T06:55:17.246Z",
+            "date": "2021-09-07T07:49:42.472Z",
             "options": {}
           }
         ]
@@ -195,9 +195,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\ngsw.json": {
         "revisions": [
           {
-            "lastChecksum": "b91cda40a1f1ffc4933768c9f645faec",
+            "lastChecksum": "5008c5b742718d23413261f48c071a71",
             "fileId": "63245937-971c-4571-8a6a-bafc34a66e48",
-            "date": "2021-09-07T06:55:17.791Z",
+            "date": "2021-09-07T07:49:42.927Z",
             "options": {}
           }
         ]
@@ -225,9 +225,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\runtime.js": {
         "revisions": [
           {
-            "lastChecksum": "e8965c795654766674fc8f70be3c9618",
+            "lastChecksum": "eb139ba96e453b07958bddde1ccd825e",
             "fileId": "9b5bb950-bfc3-4240-868e-ccad0dd80f89",
-            "date": "2021-09-06T13:10:36.865Z",
+            "date": "2021-09-07T07:49:43.040Z",
             "options": {}
           }
         ]
@@ -235,9 +235,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\runtime.js.map": {
         "revisions": [
           {
-            "lastChecksum": "dcebd6dfe291afb28d7cab36dec57e9c",
+            "lastChecksum": "2810cdf6204dd1e731bbf4d584a0b24a",
             "fileId": "cf2dce67-99c4-4ad9-9659-8c6f4f983860",
-            "date": "2021-09-06T13:10:36.970Z",
+            "date": "2021-09-07T07:49:43.060Z",
             "options": {}
           }
         ]
@@ -275,9 +275,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\vendor.js": {
         "revisions": [
           {
-            "lastChecksum": "aedf6ee6c599babda757a05cebadbea4",
+            "lastChecksum": "182283298d68027149206321e1e4669d",
             "fileId": "2f3589d3-bf34-4e99-ad0e-c5b20a1d8a9d",
-            "date": "2021-09-06T13:10:37.377Z",
+            "date": "2021-09-07T07:49:43.179Z",
             "options": {}
           }
         ]
@@ -285,9 +285,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\vendor.js.map": {
         "revisions": [
           {
-            "lastChecksum": "81ff03da1a89fcffb32b269e2ccf6d57",
+            "lastChecksum": "f8b23db87016a6e62b967af626c08d09",
             "fileId": "8fc38851-1109-4b21-8ed8-75b27f7dcdab",
-            "date": "2021-09-06T13:10:37.877Z",
+            "date": "2021-09-07T07:49:43.388Z",
             "options": {}
           }
         ]
@@ -305,9 +305,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\server\\3rdpartylicenses.txt": {
         "revisions": [
           {
-            "lastChecksum": "de55370562bfba44e9f74a1e0ac0dc1f",
+            "lastChecksum": "108df2bc4ce2a112c30f28fa43cf6ff0",
             "fileId": "fc2c2f2a-c256-4e10-976b-8190b5cc5dd7",
-            "date": "2021-09-06T13:10:38.345Z",
+            "date": "2021-09-07T07:49:43.712Z",
             "options": {}
           }
         ]
@@ -315,9 +315,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\server\\main.js": {
         "revisions": [
           {
-            "lastChecksum": "c24ae0413d1dd9fecebdc057d3a5514c",
+            "lastChecksum": "28e1d6a47f8f2bd7f083d215a66025e9",
             "fileId": "1cff0ecf-18b8-41b5-89fc-720c22e6d158",
-            "date": "2021-09-07T06:55:19.527Z",
+            "date": "2021-09-07T07:49:43.867Z",
             "options": {}
           }
         ]
