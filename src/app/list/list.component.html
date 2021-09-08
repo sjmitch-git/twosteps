@@ -4,7 +4,14 @@
             <findcategory></findcategory>
         </div>
         <div class="col-12">
-            <h1 class='text-capitalize'>{{fsq.section?.name}} <small class='text-muted d-block'>{{title}}</small></h1>
+            <h1 class='text-capitalize'>{{fsq.section?.name}}<br/>
+                <small class='text-muted me-3'>{{title}}</small>
+                <sup>
+                    <button class='btn btn-sm btn-primary' (click)='ms.togglefullscreen()' title='View Map'>
+                        Map
+                    </button>
+                </sup>
+            </h1>
         </div>
     </div>
     <div class='mx-auto col-12 col-lg-8' *ngIf="errors">

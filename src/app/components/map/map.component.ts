@@ -126,10 +126,13 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
         let pos = marker.getLatLng();
         that.go(pos.lat, pos.lng)
       });
-      this. map.on('dblclick', function(e: any) {
+      this.map.on('dblclick', function(e: any) {
         let latlng = e.latlng;
         dragMarker.setLatLng(latlng);
         that.go(latlng.lat, latlng.lng);
+      });
+      this.map.on('resize', function(e: any) {
+        setTimeout(function(){ that.map.invalidateSize()}, 400);
       });
       this.map.on('popupopen', function(e: any) {
         let el = document.getElementsByClassName('popup');
@@ -156,6 +159,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
 
   setVenue = (v: any) => {
     if (!this.isBrowser) return;
+    let that = this;
     this.lat = v.location.lat;
     this.lon = v.location.lng;
     let originalTile: any = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19});
@@ -173,6 +177,15 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
       iconAnchor:[15,15],
       popupAnchor:[0, 0],
       iconSize: [30, 30],
+    });
+    this.map.on('resize', function(e: any) {
+      setTimeout(function(){ that.map.invalidateSize()}, 400);
+    });
+    this.map.on('dblclick', function(e: any) {
+      let latlng = e.latlng;
+      that.router.navigate(['/trending'], { 
+        queryParams: { lat: latlng.lat, lon: latlng.lng}
+      });
     });
     let venueMarker = L.marker([this.lat, this.lon], {
       icon: venueIcon,

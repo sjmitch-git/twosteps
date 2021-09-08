@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { FoursquareService } from "../services/foursquare.service";
-import { UserService } from "../services/user.service";
+import { MapService } from "../services/map.service";
 import { SeoService } from "../services/seo.service";
 import { ScrolltoService } from "../services/scrollto.service";
 
@@ -27,6 +27,7 @@ export class ListComponent implements OnInit {
     public fsq: FoursquareService,
     private seo: SeoService,
     public scroll: ScrolltoService,
+    public ms: MapService,
   ) {
     this.isBrowser = seo.isBrowser;
    }
