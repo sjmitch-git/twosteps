@@ -1,12 +1,44 @@
 <style>
+
+    .map-container {
+        position: relative;
+    }
+
     #map {
         height: 380px;
         width: 100%;
     }
 
+    .btn {
+        position: absolute;
+        z-index: 1000;
+        border: 1px solid rgba(0,0,0,0.6);
+        padding: 4px 8px;
+    }
+
+    .btn-fullscreen {
+        left: 10px;
+        top: 80px;
+    }
+
+    .btn-tiles {
+        right: 10px;
+        top: 10px;
+    }
+
     
 </style>
 
-<div id='map' class='mb-5'>
-
+<div id='map-c' class='map-container mb-5'>
+    <div id='map' [ngClass]="{'fullscreen': ms.fullscreen}">
+        <button class='btn btn-light btn-fullscreen' (click)='ms.togglefullscreen()' title='Toggle fullscreen'>
+            <img src='assets/img/compress-arrows-alt.svg' width=15 alt='Close fullscreen' *ngIf="ms.fullscreen">
+            <img src='assets/img/expand.svg' width=15 alt='Open fullscreen'*ngIf="!ms.fullscreen">
+        </button>
+        <button class='btn btn-light btn-tiles' (click)='changeTiles()' title='Change tiles'>
+            <img src='assets/img/layer-group.svg' width=15 alt='layers'>
+        </button>
+    </div>
 </div>
+
+

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { WikiService  } from "../../services/wiki.service";
+import { FoursquareService } from "../../services/foursquare.service";
 
 @Component({
   selector: 'getnearby',
@@ -20,6 +21,7 @@ export class GetnearbyComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private wiki: WikiService,
+    private fsq: FoursquareService
   ) { }
 
   errorHandler = (msg: string) => {

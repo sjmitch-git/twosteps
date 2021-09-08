@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, Input, OnChanges, SimpleChanges, PLAT
 import { ActivatedRoute, Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
-//import * as L from 'leaflet';
+import { MapService } from "../../services/map.service";
 
 declare let L: any;
 
@@ -20,7 +20,12 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   markers?: any;
   maptype?: string;
   isBrowser: boolean = false;
-  private _L : any;
+  alidade_smooth: number = 0;
+  OpenStreetMap: number = 1;
+  WorldImagery: number = 2;
+  Transport: number = 3;
+  OpenCycleMap: number = 4;
+  tileCounter: number = 0;
 
   @Input() data?: any[];
   @Input() venue?: any[];
@@ -29,9 +34,28 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
     private route: ActivatedRoute,
     private router: Router,
     @Inject(PLATFORM_ID) platformId: Object,
+    public ms: MapService
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
-   }
+  }
+
+  selectTiles = (i: number) => {
+    let self = this;
+    this.ms.currentTile = this.ms.tileLayers[this.ms.tiles[i]];
+    this.map.eachLayer(function (layer: any) {
+      if (!layer._latlng && layer._url) {
+        L.tileLayer(self.ms.tileLayers[self.ms.tiles[i]]).addTo(self.map);  
+        layer.remove();
+        return;
+      }
+    });
+  }
+
+  changeTiles = () => {
+    if (this.tileCounter === this.ms.tiles.length -1) this.tileCounter = 0;
+    else this.tileCounter ++;
+    this.selectTiles(this.tileCounter);
+  }
 
   addMarkers = (arr: any[]) => {
     if (this.markers) this.map.removeLayer(this.markers);
@@ -76,7 +100,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   ngAfterViewInit(): void {
     if (!this.isBrowser) return;
     let that = this;
-    let originalTile: any = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19});
+    let originalTile: any = L.tileLayer(this.ms.currentTile, {maxZoom: 19});
     
     if (this.maptype === 'results') {
       let dragMarkerIcon = L.divIcon({
