@@ -8,11 +8,22 @@
         <div class="card mb-2">
             <div class='card-body'>
                 <h5 class="card-title mb-0">
-                    <a [routerLink]="['/trending']" [queryParams]="{lon:item.lon,lat:item.lat}" class='stretched-link text-reset'>
+                    <a [routerLink]="['/trending']" [queryParams]="{lat:item.lat,lon:item.lon}" class='stretched-link text-reset'>
                         {{item.name}}
                     </a>
                 </h5>
             </div>
         </div>
+    </div>
+    <div class="col-12 py-4 text-center" *ngIf="title">
+        <h3>
+          <a href='{{link}}' target="_blank">
+                {{title}}
+            </a>
+        </h3>
+        <p>
+            Read more about this location<br/>
+            <small>(opens in new tab)</small>
+        </p>
     </div>
 </div>

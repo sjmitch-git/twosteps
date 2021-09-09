@@ -5,12 +5,10 @@
         </div>
         <div class="col-12">
             <h1 class='text-capitalize'>{{fsq.section?.name}}<br/>
-                <small class='text-muted me-3'>{{title}}</small>
-                <sup>
-                    <button class='btn btn-sm btn-primary' (click)='ms.togglefullscreen()' title='View Map'>
-                        Map
-                    </button>
-                </sup>
+                <small class='text-muted me-3 mb-1'>{{title}}</small> 
+                <button class='btn btn-sm btn-primary' *ngIf="!loading" (click)='ms.togglefullscreen()' title='View Map'>
+                    Map
+                </button>
             </h1>
         </div>
     </div>
@@ -45,6 +43,7 @@
         </div>
     </div>
     <getnearby></getnearby>
+    <hr class='mb-5'>
     <div class='mb-5'>
         <search-geonames></search-geonames>
     </div>

@@ -17,6 +17,9 @@ export class GetnearbyComponent implements OnInit {
   results: any[] = [];
   lon?: string;
   lat?: string;
+  wikibase?: string;
+  title?: string;
+  link?: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,6 +35,8 @@ export class GetnearbyComponent implements OnInit {
   processNearby = (data: any) => {
     let arr = Object.values(data);
     let results = this.filterByCoordinates(arr);
+    let title;
+    let wikibase;
     for (let i = 0; i < results.length; i++) {
       const el = results[i];
       let item = {
@@ -40,6 +45,19 @@ export class GetnearbyComponent implements OnInit {
         lon: el.coordinates[0].lon,
       };
       if (item.lat !== Number(this.lat), item.lon !== Number(this.lon)) this.results.push(item)
+      else {
+        wikibase = el.pageprops.wikibase_item;
+        title = item.name;
+      }
+    }
+    if (wikibase) {
+      this.wikibase = wikibase;
+      this.title = title;
+      this.link = `https://tramp-v2.herokuapp.com/explore?q=${wikibase}`
+    } else {
+      this.wikibase = '';
+      this.title = '';
+      this.link = '';
     }
   }
 

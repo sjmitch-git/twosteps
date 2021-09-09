@@ -12,8 +12,8 @@ export class DestinationsService {
       name: 'Paris',
       country: 'France',
       cc: 'fr',
-      lat: 48.8566,
-      lon: 2.3522
+      lat: 48.856,
+      lon: 2.351
     },
     {
       name: 'New York',
@@ -26,15 +26,15 @@ export class DestinationsService {
       name: 'London',
       country: 'United Kingdom',
       cc: 'uk',
-      lat: 51.5074,
-      lon: -0.1278
+      lat: 51.5086,
+      lon: -0.1264
     },
     {
       name: 'Bangkok',
       country: 'Thailand',
       cc: 'th',
-      lat: 13.7563,
-      lon: 100.5018
+      lat: 13.752222,
+      lon: 100.493889
     },
     {
       name: 'Hong Kong',
@@ -93,11 +93,67 @@ export class DestinationsService {
       lon: 135.501944
     },
     {
-      name: 'Seoul ',
+      name: 'Seoul',
       country: 'South Korea',
       cc: 'kr',
       lat: 37.56,
       lon: 126.99
+    },
+    {
+      name: 'Mecca',
+      country: 'Saudi Arabia',
+      cc: 'sa',
+      lat: 21.4,
+      lon: 39.8
+    },
+    {
+      name: 'Nice',
+      country: 'France',
+      cc: 'fr',
+      lat: 43.7034,
+      lon: 7.2663
+    },
+    {
+      name: 'Phuket',
+      country: 'Thailand',
+      cc: 'th',
+      lat: 7.89,
+      lon: 98.398333
+    },
+    {
+      name: 'Pattaya',
+      country: 'Thailand',
+      cc: 'th',
+      lat: 12.949565,
+      lon: 100.893004
+    },
+    {
+      name: 'Milan',
+      country: 'Italy',
+      cc: 'it',
+      lat: 45.464167,
+      lon: 9.19027
+    },
+    {
+      name: 'Barcelona',
+      country: 'Spain',
+      cc: 'es',
+      lat: 41.3825,
+      lon: 2.176944
+    },
+    {
+      name: 'Palma De Mallorca',
+      country: 'Spain',
+      cc: 'es',
+      lat: 39.566667,
+      lon: 2.649722
+    },
+    {
+      name: 'Bali',
+      country: 'Indonesia',
+      cc: 'id',
+      lat: -8.666667,
+      lon: 115.216667
     }
   ];
 }

@@ -132,7 +132,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
         that.go(latlng.lat, latlng.lng);
       });
       this.map.on('resize', function(e: any) {
-        setTimeout(function(){ that.map.invalidateSize()}, 400);
+        setTimeout(function(){ that.map.invalidateSize()}, 2000);
       });
       this.map.on('popupopen', function(e: any) {
         let el = document.getElementsByClassName('popup');
@@ -179,7 +179,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
       iconSize: [30, 30],
     });
     this.map.on('resize', function(e: any) {
-      setTimeout(function(){ that.map.invalidateSize()}, 400);
+      setTimeout(function(){ that.map.invalidateSize()}, 2000);
     });
     this.map.on('dblclick', function(e: any) {
       let latlng = e.latlng;

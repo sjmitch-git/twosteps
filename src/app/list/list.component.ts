@@ -97,12 +97,12 @@ export class ListComponent implements OnInit {
     }
 
     if (this.path === 'search') {
-      if (state) this.seo.setTitle(`${this.title} - ${city}, ${state}-${cc}`)
-      else this.seo.setTitle(`${this.title} - ${city}, ${cc}`)
+      if (state) this.seo.setTitle(`${this.title} near me in ${city}, ${state}-${cc}`)
+      else this.seo.setTitle(`${this.title} near me in ${city}, ${cc}`)
     } else {
       let section = this.capitalizeFirstLetter(this.fsq.section.name);
-      if (state) this.seo.setTitle(`${section} Places - ${this.title}, ${state}-${cc}`)
-      else this.seo.setTitle(`${section} Places - ${this.title}, ${cc}`)
+      if (state) this.seo.setTitle(`${section} Places near me in ${this.title}, ${state}-${cc}`)
+      else this.seo.setTitle(`${section} Places near me in ${this.title}, ${cc}`)
     }
     this.seo.setDescription(this.seo.title.getTitle() + ' (' + res?.length + ' results)');
     this.setKeywords(res);

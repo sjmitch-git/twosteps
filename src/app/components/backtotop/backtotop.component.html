@@ -4,8 +4,12 @@
         right: 1rem;
         bottom: 1rem;
         z-index: 1000;
+        opacity: .5;
+    }
+    .scrolltop:hover {
+        opacity: 1;
     }
 </style>
-<button class='btn btn-primary scrolltop' id='scrollbtn' (click)='topFunction()' title='Back to top'>
-    ^
+<button class='btn btn-primary scrolltop p-0' id='scrollbtn' (click)='topFunction()' title='Back to top'>
+    <img src='../../../assets/img/angle-double-up.svg' width="40">
  </button>
