@@ -2,6 +2,8 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+import { SeoService } from "../../services/seo.service";
+
 @Component({
   selector: 'findcategory',
   templateUrl: './findcategory.component.html',
@@ -18,6 +20,7 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
   constructor(
     private httpClient: HttpClient,
     private router: Router,
+    private seo: SeoService
   ) { }
 
   ngOnInit(): void {
@@ -28,8 +31,9 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
   }
 
   select = () => {
-    let id = this.categories.find(x => x.name === this.category).id;
-    this.go(id);
+    let o = this.categories.find(x => x.name === this.category);
+    this.seo.sendEvent('Search by catergory', `${o.name}`)
+    this.go(o.id);
   }
 
   go = (id: string) => {
@@ -45,6 +49,7 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
       this.categories = this.process(res);
       this.categories.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
     }, (err) => {
+      this.seo.sendEvent('Error', 'Failed to download FSQ categories blob')
       console.log(err);
     });
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { GeonamesService } from "../../services/geonames.service";
+import { SeoService } from "../../services/seo.service";
 
 @Component({
   selector: 'search-geonames',
@@ -16,6 +17,7 @@ export class GeonamesComponent implements OnInit {
 
   constructor(
     public geo: GeonamesService,
+    private seo: SeoService
   ) { }
 
   ngOnInit(): void {
@@ -29,6 +31,7 @@ export class GeonamesComponent implements OnInit {
   search = () => {
     this.error = '';
     this.loading = true;
+    this.seo.sendEvent('Search for destination', `${this.q}`)
     this.geo.search(this.q).subscribe((res : any)=>{
       if (!res.geonames.length) return this.errorHandler('No results for ' + this.q)
       this.geo.results = res.geonames;

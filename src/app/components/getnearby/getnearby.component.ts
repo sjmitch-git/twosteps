@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { WikiService  } from "../../services/wiki.service";
 import { FoursquareService } from "../../services/foursquare.service";
+import { SeoService } from "../../services/seo.service";
 
 @Component({
   selector: 'getnearby',
@@ -24,7 +25,8 @@ export class GetnearbyComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private wiki: WikiService,
-    private fsq: FoursquareService
+    private fsq: FoursquareService,
+    public seo: SeoService
   ) { }
 
   errorHandler = (msg: string) => {
@@ -53,7 +55,8 @@ export class GetnearbyComponent implements OnInit {
     if (wikibase) {
       this.wikibase = wikibase;
       this.title = title;
-      this.link = `https://tramp-v2.herokuapp.com/explore?q=${wikibase}`
+      this.link = `https://tramp-v2.herokuapp.com/explore?q=${wikibase}`;
+      this.seo.sendEvent('wikibase', wikibase)
     } else {
       this.wikibase = '';
       this.title = '';

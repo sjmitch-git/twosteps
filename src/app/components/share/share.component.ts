@@ -76,6 +76,7 @@ export class ShareComponent implements OnInit {
   share = (cat:string) => {
     this.title = this.seo.title.getTitle();
     this.href = this.seo.href;
+    this.seo.sendEvent(cat, `${this.title}`)
     this.go(cat);
   }
 

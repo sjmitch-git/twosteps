@@ -2,6 +2,8 @@ import { Injectable, Inject, PLATFORM_ID} from '@angular/core';
 import { Meta, Title  } from '@angular/platform-browser';
 import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 
+declare let gtag: any;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -107,6 +109,14 @@ export class SeoService {
     }
     keywords.push(v.name)
     this.setKeywords(keywords)
+  }
+
+  sendEvent = (category:string, label:string) => {
+    if (typeof gtag === 'undefined') return;
+    gtag('event', 'click', {
+      'event_category': category,
+      event_label: label
+    });
   }
 
 }

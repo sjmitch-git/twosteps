@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { UserService } from "../../services/user.service";
 import { FoursquareService } from "../../services/foursquare.service";
+import { SeoService } from "../../services/seo.service";
 
 @Component({
   selector: 'getlocation',
@@ -17,7 +18,8 @@ export class GetlocationComponent implements OnInit {
   constructor(
     private router: Router,
     public user: UserService,
-    public fsq: FoursquareService
+    public fsq: FoursquareService,
+    public seo: SeoService
   ) { }
 
   ngOnInit(): void {
@@ -25,12 +27,7 @@ export class GetlocationComponent implements OnInit {
 
   selectSection = (section: any) => {
     this.fsq.section = section;
-    if (!this.user.lat && !this.user.lon) this.getLocation();
-    else {
-      this.router.navigate(['/' + this.fsq.section.name], { 
-        queryParams: { lat: this.fsq.lat, lon: this.fsq.lon, r: this.fsq.radius}
-      });
-    }
+    this.getLocation();
   }
 
   getLocation(): void{
@@ -52,6 +49,7 @@ export class GetlocationComponent implements OnInit {
   }
 
   go = (lat: number, lon: number) => {
+    this.seo.sendEvent('Get location', `${lat}, ${lon}, ${this.fsq.section}`)
     this.router.navigate(['/' + this.fsq.section.name], { 
       queryParams: { lat: lat, lon: lon, r: this.fsq.radius}
     });
