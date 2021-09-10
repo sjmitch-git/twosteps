@@ -1,0 +1,15 @@
+<div id='modal' class='modal bg-dark' [class.d-block]="modal.openModal"  tabindex="0" *ngIf="modal.openModal">
+    <div class="modal-header border-0 text-end">
+        <button type="button" class="btn btn-sm btn-dark ms-auto" aria-label="Close" (click)='modal.close()'>
+          Close
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <figure class='figure'>
+          <img class="modal-content img-fluid" [src]='modal.src'>
+          <div class="modal-caption text-light pt-2">
+               {{modal.caption}}
+          </div>
+        </figure>
+      </div>
+</div>

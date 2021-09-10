@@ -31,6 +31,9 @@ export class FoursquareService {
   	{id: 'arts', name: 'arts', icon: 'university', colour: 'red'},
     {id: 'outdoors', name: 'outdoors', icon: 'tree', colour: 'green'}
   ];
+  searchOptions: any[] = [
+  	{id: '4bf58dd8d48988d1fa931735', name: 'hotels', icon: 'hotel', colour: 'blue'},
+  ];
   results?: any[];
   resultsCategories?: any[];
   venue?: any;

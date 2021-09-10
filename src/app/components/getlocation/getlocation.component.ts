@@ -5,6 +5,8 @@ import { UserService } from "../../services/user.service";
 import { FoursquareService } from "../../services/foursquare.service";
 import { SeoService } from "../../services/seo.service";
 
+import { Section } from "../../models/section";
+
 @Component({
   selector: 'getlocation',
   templateUrl: './getlocation.component.html',
@@ -14,6 +16,10 @@ import { SeoService } from "../../services/seo.service";
 export class GetlocationComponent implements OnInit {
 
   errors?: string;
+  searchSection: Section = {
+    id: '',
+    name: ''
+  };
 
   constructor(
     private router: Router,
@@ -27,6 +33,12 @@ export class GetlocationComponent implements OnInit {
 
   selectSection = (section: any) => {
     this.fsq.section = section;
+    this.getLocation();
+  }
+
+  selectSearch = (section: any) => {
+    this.fsq.section = {};
+    this.searchSection = section;
     this.getLocation();
   }
 
@@ -45,13 +57,21 @@ export class GetlocationComponent implements OnInit {
   setUser(lon: number, lat: number){
     this.user.lat = lat;
     this.user.lon = lon;
-    this.go(lat, lon);
+    if (this.searchSection) this.search(lat, lon);
+    else this.go(lat, lon);
   }
 
   go = (lat: number, lon: number) => {
-    this.seo.sendEvent('Get location', `${lat}, ${lon}, ${this.fsq.section}`)
+    this.seo.sendEvent('Go location', `${lat}, ${lon}, ${this.fsq.section.name}`)
     this.router.navigate(['/' + this.fsq.section.name], { 
-      queryParams: { lat: lat, lon: lon, r: this.fsq.radius}
+      queryParams: { lat: lat, lon: lon, c:null, n: null}
+    });
+  }
+
+  search = (lat: number, lon: number) => {
+    this.seo.sendEvent('Search location', `${lat}, ${lon}`)
+    this.router.navigate(['/search'], { 
+      queryParams: { lat: lat, lon: lon, c: this.searchSection.id, n: this.searchSection.name}
     });
   }
 

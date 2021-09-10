@@ -50,6 +50,7 @@ export class GetnearbyComponent implements OnInit {
       else {
         wikibase = el.pageprops.wikibase_item;
         title = item.name;
+      //  console.log(el)
       }
     }
     if (wikibase) {

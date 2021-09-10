@@ -25,6 +25,7 @@ import { ShareComponent } from './components/share/share.component';
 import { BacktotopComponent } from './components/backtotop/backtotop.component';
 import { GeonamesComponent } from './components/geonames/geonames.component';
 import { GetnearbyComponent } from './components/getnearby/getnearby.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { GetnearbyComponent } from './components/getnearby/getnearby.component';
     ShareComponent,
     BacktotopComponent,
     GeonamesComponent,
-    GetnearbyComponent
+    GetnearbyComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

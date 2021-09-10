@@ -10,6 +10,7 @@ import { FoursquareService } from "../services/foursquare.service";
 export class WikiService {
 
   nearbypath: string = 'wikivoyage';
+  nearbypathOptions: any[] = ['wikivoyage', 'wikipedia'];
   limit: number = 12;
   radius: number = 10000;
   lang: string = 'en';

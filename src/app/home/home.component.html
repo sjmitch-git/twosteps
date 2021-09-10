@@ -15,7 +15,7 @@
             </h2>
 
             <div class='mb-5'>
-                <a class='btn btn-dark m-2' [routerLink]="['/trending']" [queryParams]="{lon:item.lon,lat:item.lat}" *ngFor="let item of destinations">
+                <a class='btn btn-secondary m-2' [routerLink]="['/trending']" [queryParams]="{lon:item.lon,lat:item.lat}" *ngFor="let item of destinations">
                     {{item.name}}
                 </a>
             </div>

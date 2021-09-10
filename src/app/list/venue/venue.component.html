@@ -62,7 +62,7 @@
               <div class='mx-auto p-2 d-flex justify-content-center'>
                 <div *ngFor="let item of fsq.venue.gallery" class=''>
                   <figure class='figure mb-0 mx-2'>
-                    <img [src]='item.src' class='img-fluid' />
+                    <img [src]='item.src' class='img-fluid click' (click)='openModal(item)' />
                   </figure>
                 </div>
               </div>
@@ -223,3 +223,5 @@
       </div>
   </div>
 </div>
+
+<modal></modal>

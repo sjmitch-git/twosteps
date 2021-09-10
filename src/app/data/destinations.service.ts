@@ -154,6 +154,13 @@ export class DestinationsService {
       cc: 'id',
       lat: -8.666667,
       lon: 115.216667
+    },
+    {
+      name: 'Singapore',
+      country: 'Singapore',
+      cc: 'sg',
+      lat: 1.29,
+      lon: 103.82
     }
   ];
 }

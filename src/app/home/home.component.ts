@@ -11,7 +11,7 @@ import { DestinationsService } from "../data/destinations.service";
 export class HomeComponent implements OnInit {
 
   title: string = 'Find Nearby';
-  description: string = 'Restaurants, bars, shops, cafés, museums, galleries, cinemas, theatres, parks, gardens';
+  description: string = 'Restaurants, bars, shops, cafés, hotels, museums, galleries, cinemas, theatres, parks, gardens';
   destinations?: any[];
 
   constructor(

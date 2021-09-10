@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FoursquareService } from "../../services/foursquare.service";
 import { SeoService } from "../../services/seo.service";
 import { ScrolltoService } from "../../services/scrollto.service";
+import { ModalService } from "../../services/modal.service";
 
 @Component({
   selector: 'app-venue',
@@ -24,8 +25,16 @@ export class VenueComponent implements OnInit {
     private seo: SeoService,
     public fsq: FoursquareService,
     public scroll: ScrolltoService,
+    public modal: ModalService,
   ) { 
     this.isBrowser = seo.isBrowser;
+  }
+
+  openModal = (img: any) => {
+    this.modal.src = img.src.replace('/350/', '/800/');
+    this.modal.caption = img.caption;
+    this.modal.openModal = true;
+    document.body.style[<any>"overflow-y"] = "hidden";
   }
 
   finally = () => {

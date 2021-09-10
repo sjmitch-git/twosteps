@@ -19,7 +19,7 @@ a {
     text-decoration: none;
 }
 
-.btn-primary {
+.btn-primary, .btn-primary.disabled, .btn-primary:disabled {
     background-color: var(--bs-purple);
     border-color: var(--bs-purple);
 }

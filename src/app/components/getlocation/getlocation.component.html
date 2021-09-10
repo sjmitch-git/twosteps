@@ -1,6 +1,11 @@
 <ul class="nav justify-content-center">
-    <li class="nav-item p-2" *ngFor="let item of fsq.sections">
-      <button class='btn bg-{{item.colour}}' (click)="selectSection(item)">
+    <li class="nav-item p-2" *ngFor="let item of fsq.sections" [title]='item.name'>
+      <button class='btn btn-primary' (click)="selectSection(item)">
+        <img src="../../assets/img/{{item.icon}}.svg" width=40>
+      </button>
+    </li>
+    <li class="nav-item p-2" *ngFor="let item of fsq.searchOptions">
+      <button class='btn btn-primary' [title]='item.name' (click)="selectSearch(item)">
         <img src="../../assets/img/{{item.icon}}.svg" width=40>
       </button>
     </li>
