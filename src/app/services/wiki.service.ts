@@ -12,7 +12,7 @@ export class WikiService {
   nearbypath: string = 'wikivoyage';
   nearbypathOptions: any[] = ['wikivoyage', 'wikipedia'];
   limit: number = 12;
-  radius: number = 10000;
+  radius: number = 20000;
   lang: string = 'en';
 
   constructor(
@@ -23,7 +23,7 @@ export class WikiService {
   getNearby:any = (lat: string, lon: string) => {
     let param: any = {
       ggscoord: lat + '|' + lon,
-      prop: 'pageprops|coordinates',
+      prop: 'pageprops|coordinates|description',
       action: 'query',
       format: 'json',
       origin: '*',

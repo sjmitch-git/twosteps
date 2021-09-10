@@ -20,6 +20,7 @@ export class GetnearbyComponent implements OnInit {
   lat?: string;
   wikibase?: string;
   title?: string;
+  description?: string;
   link?: string;
 
   constructor(
@@ -39,10 +40,12 @@ export class GetnearbyComponent implements OnInit {
     let results = this.filterByCoordinates(arr);
     let title;
     let wikibase;
+    let description;
     for (let i = 0; i < results.length; i++) {
       const el = results[i];
       let item = {
         name: el.title,
+        description: this.capitalizeFirstLetter(el.description),
         lat: el.coordinates[0].lat,
         lon: el.coordinates[0].lon,
       };
@@ -50,19 +53,26 @@ export class GetnearbyComponent implements OnInit {
       else {
         wikibase = el.pageprops.wikibase_item;
         title = item.name;
-      //  console.log(el)
+        description = this.capitalizeFirstLetter(el.description);
       }
     }
     if (wikibase) {
       this.wikibase = wikibase;
       this.title = title;
       this.link = `https://tramp-v2.herokuapp.com/explore?q=${wikibase}`;
-      this.seo.sendEvent('wikibase', wikibase)
+      this.seo.sendEvent('wikibase', wikibase);
+      this.description = description;
     } else {
       this.wikibase = '';
       this.title = '';
       this.link = '';
+      this.description = '';
     }
+  }
+
+  capitalizeFirstLetter = (str:string) => {
+    if (!str) return;
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
   filterByCoordinates = (arr: any) => {
