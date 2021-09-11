@@ -75,8 +75,8 @@ export class DestinationsService {
       name: 'Istanbul',
       country: 'Turkey',
       cc: 'tr',
-      lat: 1.3,
-      lon: 103.8
+      lat: 41.01384,
+      lon: 28.9496
     },
     {
       name: 'Antalya',

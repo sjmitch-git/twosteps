@@ -45,8 +45,8 @@ export class FoursquareService {
   ) {
     this.CLIENT_ID = environment.CLIENT_ID
     this.CLIENT_SECRET = environment.CLIENT_SECRET;
-    if (typeof window !== 'undefined') this.locale = window.navigator.language.split('-')[0];
-    this.locale = 'en';
+    if (typeof navigator !== 'undefined' && navigator.language) this.locale = navigator.language.split('-')[0];
+    else this.locale = 'en';
   }
 
   getIcon(venue: any) {

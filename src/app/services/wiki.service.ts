@@ -15,8 +15,8 @@ export class WikiService {
   constructor(
     private httpClient: HttpClient,
   ) { 
-    if (typeof window !== 'undefined') this.lang = window.navigator.language.split('-')[0];
-    this.lang = 'en';
+    if (typeof navigator !== 'undefined' && navigator.language) this.lang = navigator.language.split('-')[0];
+    else this.lang = 'en';
   }
 
   getNearby:any = (lat: string, lon: string) => {
