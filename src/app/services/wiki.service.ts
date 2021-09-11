@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
-
-import { FoursquareService } from "../services/foursquare.service";
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +10,14 @@ export class WikiService {
   nearbypathOptions: any[] = ['wikivoyage', 'wikipedia'];
   limit: number = 12;
   radius: number = 20000;
-  lang: string = 'en';
+  lang?: string;
 
   constructor(
     private httpClient: HttpClient,
-    private fsq: FoursquareService
-  ) { }
+  ) { 
+    if (typeof window !== 'undefined') this.lang = window.navigator.language.split('-')[0];
+    this.lang = 'en';
+  }
 
   getNearby:any = (lat: string, lon: string) => {
     let param: any = {

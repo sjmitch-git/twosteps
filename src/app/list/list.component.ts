@@ -51,8 +51,12 @@ export class ListComponent implements OnInit {
     }, 800);
   }
 
+  notconnected = () => {
+    this.router.navigate(['/notconnected'], {});
+  }
+
   explore = (lon: string, lat:string) => {
-    if (!navigator.onLine) this.errors = 'You are not connected to the internet!';
+    if (!navigator.onLine) this.notconnected();
     else {
       this.loading = true;
       this.errors = '';
@@ -71,7 +75,7 @@ export class ListComponent implements OnInit {
   }
 
   find = (lat: string, lon: string, category:string) => {
-    if (!navigator.onLine) this.errors = 'You are not connected to the internet!';
+    if (!navigator.onLine) this.notconnected();
     else {
       this.loading = true;
       this.errors = '';

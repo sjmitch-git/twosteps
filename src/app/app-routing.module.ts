@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ListComponent } from './list/list.component';
 import { VenueComponent } from './list/venue/venue.component';
+import { NotconnectedComponent } from './notconnected/notconnected.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'venue',
     component: VenueComponent
+  },
+  {
+    path: 'notconnected',
+    component: NotconnectedComponent
   },
   {
     path: '**',

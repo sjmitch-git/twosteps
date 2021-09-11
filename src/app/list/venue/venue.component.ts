@@ -50,15 +50,22 @@ export class VenueComponent implements OnInit {
     this.errors = res.warning.text;
   }
 
+  notconnected = () => {
+    this.router.navigate(['/notconnected'], {});
+  }
+
   getVenue = (id: string) => {
-    this.loading = true;
-  	this.fsq.getVenue(id).subscribe((res : any)=>{
-      this.fsq.venue = this.fsq.processVenue(res.response.venue);
-    }, (err) => {
-      this.handleError(err)
-    }, () => {
-      this.finally();
-    });
+    if (!navigator.onLine) this.notconnected();
+    else {
+      this.loading = true;
+      this.fsq.getVenue(id).subscribe((res : any)=>{
+        this.fsq.venue = this.fsq.processVenue(res.response.venue);
+      }, (err) => {
+        this.handleError(err)
+      }, () => {
+        this.finally();
+      });
+    }
   }
 
   updateSeo = (v: any) => {

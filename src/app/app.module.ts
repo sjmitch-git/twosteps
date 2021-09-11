@@ -26,6 +26,7 @@ import { BacktotopComponent } from './components/backtotop/backtotop.component';
 import { GeonamesComponent } from './components/geonames/geonames.component';
 import { GetnearbyComponent } from './components/getnearby/getnearby.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { NotconnectedComponent } from './notconnected/notconnected.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ModalComponent } from './components/modal/modal.component';
     BacktotopComponent,
     GeonamesComponent,
     GetnearbyComponent,
-    ModalComponent
+    ModalComponent,
+    NotconnectedComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

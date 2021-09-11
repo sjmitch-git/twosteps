@@ -20,6 +20,7 @@ export class GetlocationComponent implements OnInit {
     id: '',
     name: ''
   };
+  path?: string;
 
   constructor(
     private router: Router,
@@ -32,12 +33,13 @@ export class GetlocationComponent implements OnInit {
   }
 
   selectSection = (section: any) => {
+    this.path = 'explore';
     this.fsq.section = section;
     this.getLocation();
   }
 
   selectSearch = (section: any) => {
-    this.fsq.section = {};
+    this.path = 'search';
     this.searchSection = section;
     this.getLocation();
   }
@@ -57,7 +59,7 @@ export class GetlocationComponent implements OnInit {
   setUser(lon: number, lat: number){
     this.user.lat = lat;
     this.user.lon = lon;
-    if (this.searchSection) this.search(lat, lon);
+    if (this.path === 'search') this.search(lat, lon);
     else this.go(lat, lon);
   }
 
