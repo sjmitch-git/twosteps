@@ -18,6 +18,7 @@ export function app(): express.Express {
   const domino = require("domino");
   const win = domino.createWindow(indexHtml);
   global['window'] = win;
+  global["navigator"] = win.navigator;
   global["requestAnimationFrame"] = (cb: any) => cb();
 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)

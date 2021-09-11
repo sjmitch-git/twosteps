@@ -37,6 +37,7 @@ export class FoursquareService {
   results?: any[];
   resultsCategories?: any[];
   venue?: any;
+  locale: string = 'en';
   colours: any[] = ['red', 'darkred', 'orange', 'green', 'darkgreen', 'blue', 'darkpurple', 'purple', 'darkpurple', 'cadetblue'];
 
   constructor(
@@ -44,6 +45,8 @@ export class FoursquareService {
   ) {
     this.CLIENT_ID = environment.CLIENT_ID
     this.CLIENT_SECRET = environment.CLIENT_SECRET;
+    if (typeof window !== 'undefined') this.locale = window.navigator.language.split('-')[0];
+    this.locale = 'en';
   }
 
   getIcon(venue: any) {
@@ -135,7 +138,7 @@ export class FoursquareService {
       radius: this.radius,
       client_id: this.CLIENT_ID,
       client_secret: this.CLIENT_SECRET,
-      locale: 'jp',
+      locale: this.locale,
       v: this.v
     };
     let url: string = this.endpoint + this.search;
@@ -149,6 +152,7 @@ export class FoursquareService {
        tips: 1,
        client_id: this.CLIENT_ID,
        client_secret: this.CLIENT_SECRET,
+       locale: this.locale,
        v: this.v
      };
      let url: string = this.endpoint + this.venues + id;
@@ -163,6 +167,7 @@ export class FoursquareService {
       radius: this.radius,
       client_id: this.CLIENT_ID,
       client_secret: this.CLIENT_SECRET,
+      locale: this.locale,
       v: this.v
     };
     let url: string = this.endpoint + this.explore;

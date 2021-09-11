@@ -48,42 +48,48 @@ export class ListComponent implements OnInit {
     if (!this.isBrowser) return;
     setTimeout(() => {
       this.scroll.to('page');
-    }, 2000);
+    }, 800);
   }
 
   explore = (lon: string, lat:string) => {
-    this.loading = true;
-    this.errors = '';
-    this.fsq.getExplore(lon, lat).subscribe((res : any)=>{
-      if (res.response.totalResults === 0) return this.handleError(res.response)
-      if (res.response.warning) this.handleError(res.response)
-      this.fsq.processResults(res.response.groups[0].items);
-      this.title = res.response.headerFullLocation;
-      this.section = res.response.groups[0].type;
-    }, (err) => {
-      this.handleError(err)
-    }, () => {
-      this.finally();
-    });
+    if (!navigator.onLine) this.errors = 'You are not connected to the internet!';
+    else {
+      this.loading = true;
+      this.errors = '';
+      this.fsq.getExplore(lon, lat).subscribe((res : any)=>{
+        if (res.response.totalResults === 0) return this.handleError(res.response)
+        if (res.response.warning) this.handleError(res.response)
+        this.fsq.processResults(res.response.groups[0].items);
+        this.title = res.response.headerFullLocation;
+        this.section = res.response.groups[0].type;
+      }, (err) => {
+        this.handleError(err)
+      }, () => {
+        this.finally();
+      });
+    }
   }
 
   find = (lat: string, lon: string, category:string) => {
-    this.loading = true;
-    this.errors = '';
-    this.section = '';
-    this.fsq.find(lat, lon, category).subscribe((res : any)=>{
-      if (!res.response.venues.length) return this.handleError(res.response)
-      if (res.response.warning) this.handleError(res.response)
-      this.fsq.processFindResults(res.response.venues);
-    }, (err) => {
-      this.handleError(err)
-    }, () => {
-      this.finally();
-    });
+    if (!navigator.onLine) this.errors = 'You are not connected to the internet!';
+    else {
+      this.loading = true;
+      this.errors = '';
+      this.section = '';
+      this.fsq.find(lat, lon, category).subscribe((res : any)=>{
+        if (!res.response.venues.length) return this.handleError(res.response)
+        if (res.response.warning) this.handleError(res.response)
+        this.fsq.processFindResults(res.response.venues);
+      }, (err) => {
+        this.handleError(err)
+      }, () => {
+        this.finally();
+      });
+    }
   }
 
   updateSeo = (res: any) => {
-
+    if (!res.length) return;
     let city;
     let cc;
     let state;
