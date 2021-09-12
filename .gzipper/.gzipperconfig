@@ -202,12 +202,32 @@
           }
         ]
       },
+      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\assets\\scss\\vendors\\_bootstrap.scss": {
+        "revisions": [
+          {
+            "lastChecksum": "c735d47958b943605fdf49d1d101ff4a",
+            "fileId": "63081222-383d-4f8b-85d5-36c825d081a5",
+            "date": "2021-09-12T11:46:57.520Z",
+            "options": {}
+          }
+        ]
+      },
+      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\assets\\scss\\vendors\\_leaflet.scss": {
+        "revisions": [
+          {
+            "lastChecksum": "855e1d60c9451350023e416332773b18",
+            "fileId": "9f1c1e5b-fb40-4179-b546-8bdcdb4ce115",
+            "date": "2021-09-12T11:46:57.654Z",
+            "options": {}
+          }
+        ]
+      },
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\index.html": {
         "revisions": [
           {
-            "lastChecksum": "6158d72ab75ce4491ee91a41168331fb",
+            "lastChecksum": "bf31b9a14cd5006d2f6bd8588553ed99",
             "fileId": "1b06aadf-c71d-4694-8cd0-bbc5d2844205",
-            "date": "2021-09-12T00:38:28.239Z",
+            "date": "2021-09-12T11:46:56.817Z",
             "options": {}
           }
         ]
@@ -255,9 +275,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\ngsw.json": {
         "revisions": [
           {
-            "lastChecksum": "ced27a7b98cf5d379e31bef2b6aa7e9a",
+            "lastChecksum": "de3daf913fbe01e1cbd2e605253f9c7c",
             "fileId": "63245937-971c-4571-8a6a-bafc34a66e48",
-            "date": "2021-09-12T00:38:29.226Z",
+            "date": "2021-09-12T11:46:57.692Z",
             "options": {}
           }
         ]
@@ -315,9 +335,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\styles.css": {
         "revisions": [
           {
-            "lastChecksum": "591469109ada4fca8b8bf6ba313db823",
+            "lastChecksum": "dfb7f09b4a91b9924b5d7992a4f7a78e",
             "fileId": "0beab715-9024-4c35-9f2f-27a775afca55",
-            "date": "2021-09-12T00:38:30.305Z",
+            "date": "2021-09-12T11:46:58.917Z",
             "options": {}
           }
         ]
@@ -325,9 +345,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\styles.css.map": {
         "revisions": [
           {
-            "lastChecksum": "229ddda898a7e78bb5c486b00de51d05",
+            "lastChecksum": "851ee99173f1696f86b1338c563ddd5d",
             "fileId": "dd3edfc1-450e-4f04-a21c-5d8aedaa7cd2",
-            "date": "2021-09-12T00:38:30.399Z",
+            "date": "2021-09-12T11:46:59.430Z",
             "options": {}
           }
         ]
@@ -365,9 +385,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\server\\3rdpartylicenses.txt": {
         "revisions": [
           {
-            "lastChecksum": "108df2bc4ce2a112c30f28fa43cf6ff0",
+            "lastChecksum": "a71ae0ef33260f68a97c967226bc3008",
             "fileId": "fc2c2f2a-c256-4e10-976b-8190b5cc5dd7",
-            "date": "2021-09-07T07:49:43.712Z",
+            "date": "2021-09-12T11:12:10.926Z",
             "options": {}
           }
         ]
@@ -375,9 +395,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\server\\main.js": {
         "revisions": [
           {
-            "lastChecksum": "720cc575f5be5ede807dca910ad4b70c",
+            "lastChecksum": "fc1fe1eb641fb5a79f24f1df91c81552",
             "fileId": "1cff0ecf-18b8-41b5-89fc-720c22e6d158",
-            "date": "2021-09-12T00:38:31.679Z",
+            "date": "2021-09-12T11:12:10.999Z",
             "options": {}
           }
         ]
@@ -398,6 +418,26 @@
             "lastChecksum": "3dc72f46d14460e7ddab893ad79e0cc6",
             "fileId": "6c222fe4-6a8b-4b73-9ef3-4be02d95d4fd",
             "date": "2021-09-12T00:38:30.236Z",
+            "options": {}
+          }
+        ]
+      },
+      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\assets\\scss\\vendors\\_vendors.scss": {
+        "revisions": [
+          {
+            "lastChecksum": "3a2f159963680adf0cf7bce10cd13b74",
+            "fileId": "5fe64253-c058-4e9b-9fd2-f92cdce73709",
+            "date": "2021-09-12T11:46:56.416Z",
+            "options": {}
+          }
+        ]
+      },
+      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\assets\\scss\\_core.scss": {
+        "revisions": [
+          {
+            "lastChecksum": "52b5f3ac50db5c19c61c028601f2ef4f",
+            "fileId": "e0c3aef5-94bd-459b-ae51-f10441b7b377",
+            "date": "2021-09-12T11:46:56.682Z",
             "options": {}
           }
         ]
