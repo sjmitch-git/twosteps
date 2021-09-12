@@ -3,7 +3,7 @@ import 'zone.js/dist/zone-node';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { join } from 'path';
-
+import * as cors from 'cors';
 import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
@@ -29,6 +29,7 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', distFolder);
   server.use(compression());
+  server.use(cors());
 
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
