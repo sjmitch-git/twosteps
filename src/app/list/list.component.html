@@ -24,6 +24,7 @@
             <div app-map [data]='fsq.results'></div>
         </div>
     </div>
+    <global *ngIf="fsq.path == 'global'"></global>
     <div class="row g-2 mb-5" *ngIf="fsq.resultsCategories">
         <div class="col-12">
             <h4 class='text-muted'>
@@ -43,6 +44,16 @@
         </div>
     </div>
     <getnearby></getnearby>
+    <div class='row mb-5' *ngIf="fsq.path == 'search'">
+        <div class="col-12 mb-3">
+            <hr />
+        </div>
+        <div class="col-12 text-center">
+            <a class='btn btn-primary' [routerLink]="['/global']" [queryParams]="{n:title}">
+                Find {{title}} trending globally
+            </a>
+        </div>
+    </div>
     <hr class='mb-5'>
     <div class='mb-5'>
         <search-geonames></search-geonames>

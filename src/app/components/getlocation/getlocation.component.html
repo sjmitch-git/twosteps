@@ -1,4 +1,4 @@
-<ul class="nav justify-content-center">
+<ul class="nav justify-content-center" *ngIf="fsq.path != 'global'">
     <li class="nav-item p-2" *ngFor="let item of fsq.sections" [title]='item.name'>
       <button class='btn btn-primary' (click)="selectSection(item)">
         <img src="../../assets/img/{{item.icon}}.svg" width=40>
@@ -10,3 +10,9 @@
       </button>
     </li>
   </ul>
+
+  <div *ngIf="fsq.path == 'global'">
+    <button class='btn btn-secondary' (click)='findNearme()'>
+      Find near me
+    </button>
+  </div>

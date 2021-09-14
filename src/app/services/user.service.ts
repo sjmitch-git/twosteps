@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  lon?: number;
-  lat?: number;
+  lon: number = 0;
+  lat: number = 0;
 
   constructor() { }
 }

@@ -32,6 +32,12 @@ export class GetlocationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  findNearme = () => {
+    this.path = 'search';
+    this.searchSection = this.fsq.selectCategory(this.fsq.section);
+    this.getLocation();
+  }
+
   selectSection = (section: any) => {
     this.path = 'explore';
     this.fsq.section = section;

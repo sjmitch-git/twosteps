@@ -39,6 +39,11 @@ export class FoursquareService {
   venue?: any;
   locale: string = 'en';
   colours: any[] = ['red', 'darkred', 'orange', 'green', 'darkgreen', 'blue', 'darkpurple', 'purple', 'darkpurple', 'cadetblue'];
+  categoryAirports: string = '4bf58dd8d48988d1ed931735';
+  path?: string;
+  pathOptions: any[] = ['explore', 'search', 'global'];
+  globalCities?: any[];
+  categories:any[] = [];
 
   constructor(
     private httpClient: HttpClient,
@@ -116,12 +121,38 @@ export class FoursquareService {
     }
   }
 
+  selectCategory = (name: string) => {
+    name = this.capitalizeFirstLetter(name);
+    for (let o of this.categories) {
+      if (o.name === name) {
+        return o;
+      }
+    }
+  }
+
+  capitalizeFirstLetter = (str:string) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
   find = (lat: string, lon: string, category:string) => {
     let params: any = {
       ll: lat + ',' + lon,
       limit: this.limit,
       categoryId: category,
       radius: this.radius,
+      client_id: this.CLIENT_ID,
+      client_secret: this.CLIENT_SECRET,
+      v: this.v
+    };
+    let url: string = this.endpoint + this.search;
+    return this.httpClient.get(url, {params: params});
+  }
+
+  findGlobal = (query:string) => {
+    let params: any = {
+      limit: this.limit,
+      query: query,
+      intent: 'global',
       client_id: this.CLIENT_ID,
       client_secret: this.CLIENT_SECRET,
       v: this.v
@@ -237,6 +268,14 @@ export class FoursquareService {
   getPhotopreview(venue: any) {
     if (!venue.bestPhoto) return;
     else return venue.bestPhoto.prefix + 600 + venue.bestPhoto.suffix;
+  }
+
+  processAirports = (list: any[]) => {
+    let arr: any[] = [];
+    for (let item of list) {
+      if (item.categories[0].id === this.categoryAirports) arr.push(item)
+    }
+    return arr;
   }
 
 }

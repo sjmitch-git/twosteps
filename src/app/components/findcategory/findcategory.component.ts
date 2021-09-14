@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 import { SeoService } from "../../services/seo.service";
+import { FoursquareService } from "../../services/foursquare.service";
 
 @Component({
   selector: 'findcategory',
@@ -20,6 +21,7 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
   constructor(
     private httpClient: HttpClient,
     private router: Router,
+    private fsq: FoursquareService,
     private seo: SeoService
   ) { }
 
@@ -37,7 +39,9 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
   }
 
   go = (id: string) => {
-    this.router.navigate(['/search'], { 
+    let path = '/search';
+    if (this.fsq.path === 'global') path = '/global';
+    this.router.navigate([path], { 
       queryParams: { c: id, n: this.category},
       queryParamsHandling: "merge"
     });
@@ -46,7 +50,7 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
   getCategories() {
     const url = this.jsonblob + this.jsonblobCategories;
     this.httpClient.get(url).subscribe((res : any)=>{
-      this.categories = this.process(res);
+      this.fsq.categories = this.categories = this.process(res);
       this.categories.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
     }, (err) => {
       this.seo.sendEvent('Error', 'Failed to download FSQ categories blob')

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SeoService } from "../services/seo.service";
 import { DestinationsService } from "../data/destinations.service";
+import { FoursquareService } from "../services/foursquare.service";
 
 @Component({
   selector: 'app-home',
@@ -16,12 +17,14 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public destinationsService: DestinationsService,
+    public fsq: FoursquareService,
     public seo: SeoService
   ) { 
     this.destinations = destinationsService.data;
   }
 
   ngOnInit(): void {
+    this.fsq.path = '';
     this.seo.setTitle('Two Steps: ' + this.title)
     this.seo.setDescription(this.description)
     this.seo.setKeywords([this.description])

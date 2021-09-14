@@ -28,8 +28,7 @@ export class WikiService {
       origin: '*',
       ggsradius: this.radius,
       generator: 'geosearch',
-      ggslimit: this.limit,
-      pilimit: this.limit
+      ggslimit: this.limit
     };
     let url: string = 'https://' + this.lang + '.' + this.nearbypath + '.org/w/api.php';
     return this.httpClient.get(url, {params: param});

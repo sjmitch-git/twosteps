@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { WikiService  } from "../../services/wiki.service";
 import { SeoService } from "../../services/seo.service";
+import { GeonamesService } from "../../services/geonames.service";
 
 @Component({
   selector: 'getnearby',
@@ -25,7 +26,8 @@ export class GetnearbyComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private wiki: WikiService,
-    public seo: SeoService
+    public seo: SeoService,
+    public geo: GeonamesService
   ) { }
 
   errorHandler = (msg: string) => {
@@ -95,12 +97,28 @@ export class GetnearbyComponent implements OnInit {
     });
   }
 
+  findNearby = (lat: string, lng: string) => {
+    /* this.error = '';
+    this.loading = true;
+    this.results = []; */
+    this.geo.findNearby(lat,lng).subscribe((res : any)=>{
+      /* if (res.query) this.processNearby(res.query.pages);
+      else this.results = []; */
+     // console.log(res)
+    }, (err: any) => {
+     // this.errorHandler(err)
+    }, () => {
+    //  this.loading = false;
+    });
+  }
+
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       if (params.lat && params.lon) {
         this.lat = params.lat;
         this.lon = params.lon;
         this.search();
+       // this.findNearby(params.lat, params.lon);
       }
     });
   }

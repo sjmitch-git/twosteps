@@ -18,6 +18,10 @@ const routes: Routes = [
     component: ListComponent
   },
   {
+    path: 'global',
+    component: ListComponent
+  },
+  {
     path: 'trending',
     component: ListComponent
   },

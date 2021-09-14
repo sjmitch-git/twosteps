@@ -27,6 +27,7 @@ import { GeonamesComponent } from './components/geonames/geonames.component';
 import { GetnearbyComponent } from './components/getnearby/getnearby.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NotconnectedComponent } from './notconnected/notconnected.component';
+import { GlobalComponent } from './components/global/global.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { NotconnectedComponent } from './notconnected/notconnected.component';
     GeonamesComponent,
     GetnearbyComponent,
     ModalComponent,
-    NotconnectedComponent
+    NotconnectedComponent,
+    GlobalComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

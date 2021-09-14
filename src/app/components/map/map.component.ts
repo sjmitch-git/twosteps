@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
 import { MapService } from "../../services/map.service";
+import { UserService } from "../../services/user.service";
 
 declare let L: any;
 
@@ -34,7 +35,8 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
     private route: ActivatedRoute,
     private router: Router,
     @Inject(PLATFORM_ID) platformId: Object,
-    public ms: MapService
+    public ms: MapService,
+    public user: UserService
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
@@ -93,6 +95,12 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
         this.lat = params.lat;
         this.lon = params.lon;
         this.maptype = 'results';
+      } else if (params.n) {
+        this.maptype = 'global';
+        if (this.user.lat) {
+          this.lat = this.user.lat;
+          this.lon = this.user.lon;
+        }
       }
     });
   }
@@ -102,7 +110,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
     let that = this;
     let originalTile: any = L.tileLayer(this.ms.currentTile, {maxZoom: 19});
     
-    if (this.maptype === 'results') {
+    if (this.maptype === 'results' || this.maptype === 'global') {
       let dragMarkerIcon = L.divIcon({
         className:'drag-icon',
         html:'<img src="../../../assets/img/crosshairs.svg" width=30>',
@@ -113,7 +121,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
         center:[this.lat, this.lon],
         zoom: 17,
         attributionControl: false,
-        layers:  originalTile
+        layers: originalTile
       });
       let dragMarker = L.marker([this.lat, this.lon], {
         icon: dragMarkerIcon,
@@ -145,9 +153,8 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   go = (lat: number, lon: number) => {
-    this.router.navigate([], { 
-      queryParams: { lat: lat, lon: lon},
-      queryParamsHandling: "merge"
+    this.router.navigate(['trending'], { 
+      queryParams: { lat: lat, lon: lon, r:50000}
     });
   }
 

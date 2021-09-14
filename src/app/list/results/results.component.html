@@ -1,6 +1,6 @@
 <div class="col-12">
     <div class="row justify-content-between">
-        <div class="col-12 col-md-6 d-flex flex-wrap">
+        <div class="col-12 col-md-6 d-flex flex-wrap" *ngIf="fsq.path != 'global'">
             <select class="form-select w-auto text-capitalize mb-2"  [(ngModel)]="section" name='selectsection' (change)="selectSection()">
                 <option disabled selected value='explore'>
                     Explore
@@ -17,15 +17,19 @@
            
             </div>
 
+            <div class="col-12 col-md-6 d-flex flex-wrap" *ngIf="fsq.path == 'global'">
+                <getlocation></getlocation>
+            </div>
+
             <div class="col-12 col-md-6 d-flex flex-wrap" *ngIf="fsq.results?.length">
                 
-                <select class="form-select w-auto text-capitalize ms-md-auto mb-2" [(ngModel)]="orderby" name='orderby'>
+                <select class="form-select w-auto text-capitalize ms-md-auto mb-2" [(ngModel)]="orderby" name='orderby' *ngIf="fsq.path != 'global'">
                     <option *ngFor="let item of orderbyOptions" [value]="item">
                         {{item}}
                     </option>
                 </select>
     
-                <div class="input-group w-auto ms-3 mb-2">
+                <div class="input-group w-auto ms-auto mb-2">
                     <input type="text" class="form-control form-control-filter" [(ngModel)]='filter' placeholder="Filter results" aria-label="Filter" aria-describedby="basic-addon1" autocomplete="off">
                     <div class="input-group-append" *ngIf='filter'>
                       <button class="btn input-group-text text-muted border-left-0" (click)='filter = ""'>
@@ -56,7 +60,9 @@
             <div class='div-icon bg-{{item.color}}'>
                 <img src="{{item.icon}}" width=30>
             </div>
-            {{item.distance / 1000 | number: '1.1-2'}} km
+            <span *ngIf="item.distance">
+                {{item.distance / 1000 | number: '1.1-2'}} km
+            </span>
         </div>
     </div>
 </div>

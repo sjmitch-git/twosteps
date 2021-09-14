@@ -83,7 +83,11 @@ export class ListComponent implements OnInit {
       this.fsq.find(lat, lon, category).subscribe((res : any)=>{
         if (!res.response.venues.length) return this.handleError(res.response)
         if (res.response.warning) this.handleError(res.response)
-        this.fsq.processFindResults(res.response.venues);
+        if (category !== this.fsq.categoryAirports) this.fsq.processFindResults(res.response.venues);
+        else {
+          let airports = this.fsq.processAirports(res.response.venues);
+          this.fsq.processFindResults(airports);
+        }
       }, (err) => {
         this.handleError(err)
       }, () => {
@@ -92,23 +96,60 @@ export class ListComponent implements OnInit {
     }
   }
 
+  findGlobal = (category:string) => {
+    if (!navigator.onLine) this.notconnected();
+    else {
+      this.loading = true;
+      this.errors = '';
+      this.section = '';
+      this.fsq.findGlobal(category).subscribe((res : any)=>{
+        if (!res.response.venues.length) return this.handleError(res.response)
+        if (res.response.warning) this.handleError(res.response)
+        if (category !== this.fsq.categoryAirports) this.fsq.processFindResults(res.response.venues);
+        else {
+          let airports = this.fsq.processAirports(res.response.venues);
+          this.fsq.processFindResults(airports);
+        }
+      }, (err) => {
+        this.handleError(err)
+      }, () => {
+        this.finally();
+      });
+    }
+  }
+
+  formatGlobalCities = (arr:any[]) => {
+   /*  for (let i = 0; i < arr.length; i++) {
+      const el = arr[i];
+      console.log(el)
+    } */
+    return arr.filter((v,i,a)=>a.findIndex(t=>(t.city === v.city))===i);
+  }
+
   updateSeo = (res: any) => {
-    if (!res.length) return;
+    if (!res || !res.length) return;
     let city;
     let cc;
     let state;
+    let cities = [];
 
     for (let i = 0; i < res.length; i++) {
-      city =  res[i].location.city;
-      cc =  res[i].location.cc;
-      state =  res[i].location.state;
-      this.seo.setLocation(res[i].location);
-      if (city) break;
+      if (!city) {
+        city =  res[i].location.city;
+        cc =  res[i].location.cc;
+        state =  res[i].location.state;
+        this.seo.setLocation(res[i].location);
+      }
+      if (res[i].location.city) cities.push(res[i].location);
     }
-
+    
     if (this.path === 'search') {
       if (state) this.seo.setTitle(`${this.title} near me in ${city}, ${state}-${cc}`)
       else this.seo.setTitle(`${this.title} near me in ${city}, ${cc}`)
+    } else if (this.path === 'global') {
+      let title = this.capitalizeFirstLetter(this.title);
+      this.seo.setTitle(`World's most popular ${title}`);
+      this.fsq.globalCities = this.formatGlobalCities(cities);
     } else {
       let section = this.capitalizeFirstLetter(this.fsq.section.name);
       if (state) this.seo.setTitle(`${section} Places near me in ${this.title}, ${state}-${cc}`)
@@ -140,14 +181,23 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.fsq.radius = params.r || this.fsq.radius;
-      this.fsq.lat = params.lat;
-      this.fsq.lon = params.lon;
+      if (params.lat && params.lon) {
+        this.fsq.lat = params.lat;
+        this.fsq.lon = params.lon;
+      }
       this.path = this.router.url.split('?')[0].split('/')[1];
       if (this.path === 'search') {
         this.find(params.lat, params.lon, params.c)
         this.title = params.n;
+        this.fsq.path = this.path;
         this.fsq.section = 'explore';
+      } else if (this.path === 'global') {
+        this.findGlobal(params.n);
+        this.title = params.n;
+        this.fsq.path = this.path;
+        this.fsq.section = params.n;
       } else {
+        this.fsq.path = 'explore';
         this.fsq.section = this.path;
         this.fsq.selectSection(this.path);
         this.explore(params.lat, params.lon)
