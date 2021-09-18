@@ -119,10 +119,6 @@ export class ListComponent implements OnInit {
   }
 
   formatGlobalCities = (arr:any[]) => {
-   /*  for (let i = 0; i < arr.length; i++) {
-      const el = arr[i];
-      console.log(el)
-    } */
     return arr.filter((v,i,a)=>a.findIndex(t=>(t.city === v.city))===i);
   }
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-notconnected',
   templateUrl: './notconnected.component.html',
@@ -8,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotconnectedComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
+
+  connected = () => {
+    this.router.navigate(['/'], {});
+  }
 
   ngOnInit(): void {
+    if (navigator.onLine) this.connected();
   }
 
 }
