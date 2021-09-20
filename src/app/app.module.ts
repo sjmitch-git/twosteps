@@ -28,6 +28,8 @@ import { GetnearbyComponent } from './components/getnearby/getnearby.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NotconnectedComponent } from './notconnected/notconnected.component';
 import { GlobalComponent } from './components/global/global.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -60,12 +62,14 @@ import { GlobalComponent } from './components/global/global.component';
     HttpClientModule,
     FormsModule,
     NgxTwitterTimelineModule,
+    NgbTypeaheadModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

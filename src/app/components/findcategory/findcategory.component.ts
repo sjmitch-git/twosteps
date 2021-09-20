@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import {Observable, OperatorFunction} from 'rxjs';
+import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 
 import { SeoService } from "../../services/seo.service";
 import { FoursquareService } from "../../services/foursquare.service";
@@ -17,6 +19,7 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
   jsonblobCategories:string = '90592d58-e86b-11eb-9694-697c0d84faea';
   categories:any[] = [];
   category?: any;
+  categoriesSimple:any[] = [];
 
   constructor(
     private httpClient: HttpClient,
@@ -27,6 +30,14 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
   }
+
+  search: OperatorFunction<string, readonly string[]> = (text$: Observable<string>) =>
+    text$.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      map(term => term.length < 2 ? []
+        : this.categoriesSimple.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+    )
 
   ngAfterViewInit(): void {
     this.getCategories();
@@ -54,7 +65,6 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
       this.categories.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
     }, (err) => {
       this.seo.sendEvent('Error', 'Failed to download FSQ categories blob')
-      console.log(err);
     });
   }
 
@@ -69,22 +79,26 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
           id: sub.id
         }
         categories.push(category)
+        this.categoriesSimple.push(sub.pluralName);
         for (let subsub of sub.categories) {
           let category = {
             name: subsub.pluralName,
             id: subsub.id
           }
           categories.push(category);
+          this.categoriesSimple.push(subsub.pluralName);
           for (let x of subsub.categories) {
             let category = {
               name: x.pluralName,
               id: x.id
             }
             categories.push(category)
+            this.categoriesSimple.push(x.pluralName);
           }
         }
       }  
     }
+    this.categoriesSimple.sort();
     return categories;
   }
 }

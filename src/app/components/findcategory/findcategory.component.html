@@ -1,7 +1,4 @@
-<input type="text" class='form-control' placeholder='Find nearby' id="categories" name="cat" list="find"  [(ngModel)]="category" (change)='select()' placeholder='Find by category'>
-
-	<datalist id="find">
-		<option *ngFor="let item of categories">{{item.name}}</option>
-	</datalist>
-
-
+<div class='d-flex'>
+	<input type="text" class='form-control' placeholder='Find nearby' id="categories" name="cat" [ngbTypeahead]="search"  [(ngModel)]="category" placeholder='Find by category'>
+	<button class='btn btn-sm btn-primary ms-1' (click)='select()' [disabled]='!category'>Search</button>
+</div>
