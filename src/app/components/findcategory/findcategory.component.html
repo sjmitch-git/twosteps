@@ -1,4 +1,4 @@
 <div class='d-flex'>
-	<input type="text" class='form-control' placeholder='Find nearby' id="categories" name="cat" [ngbTypeahead]="search"  [(ngModel)]="category" placeholder='Find by category'>
+	<input type="text" class='form-control' placeholder='Find nearby' id="categories" name="cat" [ngbTypeahead]="search"  [(ngModel)]="category" placeholder='Find by category' [editable]='false'>
 	<button class='btn btn-sm btn-primary ms-1' (click)='select()' [disabled]='!category'>Search</button>
 </div>

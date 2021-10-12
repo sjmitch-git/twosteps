@@ -16,6 +16,7 @@ export class GetnearbyComponent implements OnInit {
   error: string = '';
   loading: boolean = false;
   results: any[] = [];
+  geoResults: any[] = [];
   lon?: string;
   lat?: string;
   wikibase?: string;
@@ -101,12 +102,15 @@ export class GetnearbyComponent implements OnInit {
     /* this.error = '';
     this.loading = true;
     this.results = []; */
+    this.geoResults = [];
     this.geo.findNearby(lat,lng).subscribe((res : any)=>{
       /* if (res.query) this.processNearby(res.query.pages);
       else this.results = []; */
-     // console.log(res)
+      this.geoResults = res.geonames;
+     // console.log(this.geoResults)
     }, (err: any) => {
      // this.errorHandler(err)
+     this.geoResults = [];
     }, () => {
     //  this.loading = false;
     });
@@ -118,7 +122,7 @@ export class GetnearbyComponent implements OnInit {
         this.lat = params.lat;
         this.lon = params.lon;
         this.search();
-       // this.findNearby(params.lat, params.lon);
+        this.findNearby(params.lat, params.lon);
       }
     });
   }

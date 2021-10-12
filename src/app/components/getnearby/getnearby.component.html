@@ -31,3 +31,25 @@
         </p>
     </div>
 </div>
+<div class="row g-2 mb-5" *ngIf="geoResults.length">
+    <div class="col-12">
+        <h4 class='text-muted'>
+            Points of Interest
+        </h4>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of geoResults">
+        <div class="card mb-2">
+            <div class='card-body'>
+                <h5 class="card-title mb-2">
+                    <a [routerLink]="['/trending']" [queryParams]="{lat:item.lat,lon:item.lng,r:100}" class='stretched-link text-reset' (click)='seo.sendEvent("Get Nearby", item.name)'>
+                        {{item.title}}
+                    </a>
+                </h5>
+                <p class='mb-0'>
+                    {{item.summary}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
