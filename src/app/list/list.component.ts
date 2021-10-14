@@ -56,7 +56,7 @@ export class ListComponent implements OnInit {
   }
 
   explore = (lon: string, lat:string) => {
-    if (!navigator.onLine) this.notconnected();
+    if (navigator && !navigator.onLine) this.notconnected();
     else {
       this.loading = true;
       this.errors = '';

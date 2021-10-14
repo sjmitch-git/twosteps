@@ -55,7 +55,7 @@ export class VenueComponent implements OnInit {
   }
 
   getVenue = (id: string) => {
-    if (!navigator.onLine) this.notconnected();
+    if (navigator && !navigator.onLine) this.notconnected();
     else {
       this.loading = true;
       this.fsq.getVenue(id).subscribe((res : any)=>{
