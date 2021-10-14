@@ -47,7 +47,8 @@ export class VenueComponent implements OnInit {
   }
 
   handleError = (res: any) => {
-    this.errors = res.warning.text;
+    if (res.name && res.name === 'HttpErrorResponse') this.notconnected();
+    else this.errors = res.warning.text;
   }
 
   notconnected = () => {
@@ -55,17 +56,14 @@ export class VenueComponent implements OnInit {
   }
 
   getVenue = (id: string) => {
-    if (navigator && !navigator.onLine) this.notconnected();
-    else {
-      this.loading = true;
-      this.fsq.getVenue(id).subscribe((res : any)=>{
-        this.fsq.venue = this.fsq.processVenue(res.response.venue);
-      }, (err) => {
-        this.handleError(err)
-      }, () => {
-        this.finally();
-      });
-    }
+    this.loading = true;
+    this.fsq.getVenue(id).subscribe((res : any)=>{
+      this.fsq.venue = this.fsq.processVenue(res.response.venue);
+    }, (err) => {
+      this.handleError(err)
+    }, () => {
+      this.finally();
+    });
   }
 
   updateSeo = (v: any) => {

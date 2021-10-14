@@ -35,6 +35,7 @@ export class ListComponent implements OnInit {
   handleError = (res: any) => {
     if (res.warning) this.errors = res.warning.text;
     else if (res.error && res.error.meta) this.errors = res.error.meta.errorDetail;
+    else if (res.name && res.name === 'HttpErrorResponse') this.notconnected();
     else {
       this.errors = 'No results';
       this.fsq.results = [];
@@ -56,66 +57,57 @@ export class ListComponent implements OnInit {
   }
 
   explore = (lon: string, lat:string) => {
-    if (navigator && !navigator.onLine) this.notconnected();
-    else {
-      this.loading = true;
-      this.errors = '';
-      this.fsq.getExplore(lon, lat).subscribe((res : any)=>{
-        if (res.response.totalResults === 0) return this.handleError(res.response)
-        if (res.response.warning) this.handleError(res.response)
-        this.fsq.processResults(res.response.groups[0].items);
-        this.title = res.response.headerFullLocation;
-        this.section = res.response.groups[0].type;
-      }, (err) => {
-        this.handleError(err)
-      }, () => {
-        this.finally();
-      });
-    }
+    this.loading = true;
+    this.errors = '';
+    this.fsq.getExplore(lon, lat).subscribe((res : any)=>{
+      if (res.response.totalResults === 0) return this.handleError(res.response)
+      if (res.response.warning) this.handleError(res.response)
+      this.fsq.processResults(res.response.groups[0].items);
+      this.title = res.response.headerFullLocation;
+      this.section = res.response.groups[0].type;
+    }, (err) => {
+      this.handleError(err)
+    }, () => {
+      this.finally();
+    });
   }
 
   find = (lat: string, lon: string, category:string) => {
-    if (!navigator.onLine) this.notconnected();
-    else {
-      this.loading = true;
-      this.errors = '';
-      this.section = '';
-      this.fsq.find(lat, lon, category).subscribe((res : any)=>{
-        if (!res.response.venues.length) return this.handleError(res.response)
-        if (res.response.warning) this.handleError(res.response)
-        if (category !== this.fsq.categoryAirports) this.fsq.processFindResults(res.response.venues);
-        else {
-          let airports = this.fsq.processAirports(res.response.venues);
-          this.fsq.processFindResults(airports);
-        }
-      }, (err) => {
-        this.handleError(err)
-      }, () => {
-        this.finally();
-      });
-    }
+    this.loading = true;
+    this.errors = '';
+    this.section = '';
+    this.fsq.find(lat, lon, category).subscribe((res : any)=>{
+      if (!res.response.venues.length) return this.handleError(res.response)
+      if (res.response.warning) this.handleError(res.response)
+      if (category !== this.fsq.categoryAirports) this.fsq.processFindResults(res.response.venues);
+      else {
+        let airports = this.fsq.processAirports(res.response.venues);
+        this.fsq.processFindResults(airports);
+      }
+    }, (err) => {
+      this.handleError(err)
+    }, () => {
+      this.finally();
+    });
   }
 
   findGlobal = (category:string) => {
-    if (!navigator.onLine) this.notconnected();
-    else {
-      this.loading = true;
-      this.errors = '';
-      this.section = '';
-      this.fsq.findGlobal(category).subscribe((res : any)=>{
-        if (!res.response.venues.length) return this.handleError(res.response)
-        if (res.response.warning) this.handleError(res.response)
-        if (category !== this.fsq.categoryAirports) this.fsq.processFindResults(res.response.venues);
-        else {
-          let airports = this.fsq.processAirports(res.response.venues);
-          this.fsq.processFindResults(airports);
-        }
-      }, (err) => {
-        this.handleError(err)
-      }, () => {
-        this.finally();
-      });
-    }
+    this.loading = true;
+    this.errors = '';
+    this.section = '';
+    this.fsq.findGlobal(category).subscribe((res : any)=>{
+      if (!res.response.venues.length) return this.handleError(res.response)
+      if (res.response.warning) this.handleError(res.response)
+      if (category !== this.fsq.categoryAirports) this.fsq.processFindResults(res.response.venues);
+      else {
+        let airports = this.fsq.processAirports(res.response.venues);
+        this.fsq.processFindResults(airports);
+      }
+    }, (err) => {
+      this.handleError(err)
+    }, () => {
+      this.finally();
+    });
   }
 
   formatGlobalCities = (arr:any[]) => {
