@@ -41,7 +41,7 @@
         <div class="card mb-2">
             <div class='card-body'>
                 <h5 class="card-title mb-2">
-                    <a [routerLink]="['/trending']" [queryParams]="{lat:item.lat,lon:item.lng,r:100}" class='stretched-link text-reset' (click)='seo.sendEvent("Get Nearby", item.name)'>
+                    <a [routerLink]="['/trending']" [queryParams]="{lat:item.lat,lon:item.lng}" class='stretched-link text-reset' (click)='seo.sendEvent("Get Nearby", item.name)'>
                         {{item.title}}
                     </a>
                 </h5>

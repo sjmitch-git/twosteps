@@ -103,12 +103,20 @@ export class GetnearbyComponent implements OnInit {
     if(/Google|Baidu|Baiduspider/.test(navigator.userAgent)) return;
     this.geoResults = [];
     this.geo.findNearby(lat,lng).subscribe((res : any)=>{
-      this.geoResults = res.geonames;
+      this.geoResults = this.filter(res.geonames);
     }, (err: any) => {
      this.geoResults = [];
     }, () => {
     //  this.loading = false;
     });
+  }
+
+  filter = (arr: any[]) => {
+    let newarr:any[] = [];
+    arr.map(x => {
+      if (x.feature && x.feature === 'landmark') newarr.push(x)
+    });
+    return newarr;
   }
 
   ngOnInit(): void {
