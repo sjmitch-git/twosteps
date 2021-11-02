@@ -53,6 +53,7 @@ export class SeoService {
 
   setTitle(title:string) {
     this.title.setTitle(title);
+    this.sendEvent('navigation', title);
     this.meta.updateTag({property: 'og:title', content: title});
     this.meta.updateTag({name: 'twitter:title', content: title});
     this.meta.updateTag({name: 'twitter:text:title', content: title});
