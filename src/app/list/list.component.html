@@ -1,11 +1,11 @@
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-12 col-md-8 col-lg-6 mb-4 text-center mx-auto">
             <findcategory></findcategory>
         </div>
         <div class="col-12">
-            <h1 class='text-capitalize'>{{fsq.section?.name}}<br/>
-                <small class='text-muted me-3 mb-1'>{{title}}</small> 
+            <h1 class='text-capitalize mb-4'>{{fsq.section?.name}}<br/>
+                <small class='text-muted me-3 my-2'>{{title}}</small> 
                 <button class='btn btn-sm btn-primary' *ngIf="!loading" (click)='ms.togglefullscreen()' title='View Map'>
                     Map
                 </button>
@@ -20,7 +20,7 @@
     </div>
     <div class="row g-2 mb-5" results></div>
     <div class="row" *ngIf="isBrowser">
-        <div class="col-12 col-lg-8 mx-auto">
+        <div class="col-12 mx-auto">
             <div app-map [data]='fsq.results'></div>
         </div>
     </div>

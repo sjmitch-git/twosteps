@@ -10,7 +10,7 @@
     "e2e": "ng e2e",
     "dev:ssr": "ng run twosteps:serve-ssr",
     "serve:ssr": "node dist/twosteps/server/main.js",
-    "build:ssr": "ng build && ng run twosteps:server && gzipper compress --incremental --exclude jpeg,png,ico ./dist",
+    "build:ssr": "ng build --prod && ng run twosteps:server && gzipper compress --incremental --exclude jpeg,png,ico ./dist",
     "prerender": "ng run twosteps:prerender",
     "postinstall": "npm run build:ssr",
     "vercel-build": "npm run build:ssr"

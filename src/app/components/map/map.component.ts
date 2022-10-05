@@ -154,7 +154,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
 
   go = (lat: number, lon: number) => {
     this.router.navigate(['trending'], { 
-      queryParams: { lat: lat, lon: lon, r:50000}
+      queryParams: { lat: lat, lon: lon}
     });
   }
 
