@@ -12,8 +12,8 @@
     "serve:ssr": "node dist/twosteps/server/main.js",
     "build:ssr": "ng build && ng run twosteps:server && gzipper compress --incremental --exclude jpeg,png,ico ./dist",
     "prerender": "ng run twosteps:prerender",
-    "start:heroku": "node dist/twosteps/server/main",
-    "postinstall": "npm run build:ssr"
+    "postinstall": "npm run build:ssr",
+    "vercel-build": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
