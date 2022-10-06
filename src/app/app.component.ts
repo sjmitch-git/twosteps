@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
 import  { Router, NavigationEnd } from "@angular/router";
 import { filter } from 'rxjs/operators';
+
 declare let gtag: any;
 
 @Component({
@@ -23,7 +24,9 @@ export class AppComponent {
       filter((event): event is NavigationEnd => event instanceof NavigationEnd)
     )
     .subscribe(e => {
-      gtag('config', 'UA-125394580-9', {'page_path':e.urlAfterRedirects});
+      setTimeout(() => {
+        gtag('config', 'UA-125394580-9', {'page_path':e.urlAfterRedirects});
+      }, 4000);
     });
 
    /*  this.router.events.subscribe(value => {
