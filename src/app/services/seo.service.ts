@@ -1,6 +1,7 @@
 import { Injectable, Inject, PLATFORM_ID} from '@angular/core';
 import { Meta, Title  } from '@angular/platform-browser';
 import { isPlatformBrowser, DOCUMENT } from '@angular/common';
+import  { Router } from "@angular/router";
 
 declare let gtag: any;
 
@@ -17,7 +18,8 @@ export class SeoService {
     @Inject(PLATFORM_ID) platformId: Object,
     private meta: Meta,
     public title: Title,
-    @Inject(DOCUMENT) private dom: Document
+    @Inject(DOCUMENT) private dom: Document,
+    private router: Router
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
     this.meta.addTag({property: 'og:title', content:''});
@@ -54,6 +56,7 @@ export class SeoService {
   setTitle(title:string) {
     this.title.setTitle(title);
     this.sendEvent('navigation', title);
+    gtag('config', 'UA-UA-125394580-9', {'page_path':this.router.url.toString()});
     this.meta.updateTag({property: 'og:title', content: title});
     this.meta.updateTag({name: 'twitter:title', content: title});
     this.meta.updateTag({name: 'twitter:text:title', content: title});

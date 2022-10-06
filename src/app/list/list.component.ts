@@ -132,20 +132,20 @@ export class ListComponent implements OnInit {
     }
     
     if (this.path === 'search') {
-      if (state) this.seo.setTitle(`${this.title} near me in ${city}, ${state}-${cc}`)
-      else this.seo.setTitle(`${this.title} near me in ${city}, ${cc}`)
+      if (state) this.seo.setTitle(`${this.title} - ${city}, ${state}-${cc}`)
+      else this.seo.setTitle(`${this.title} - ${city}, ${cc}`)
     } else if (this.path === 'global') {
       let title = this.capitalizeFirstLetter(this.title);
       this.seo.setTitle(`World's most popular ${title}`);
       this.fsq.globalCities = this.formatGlobalCities(cities);
     } else {
       let section = this.capitalizeFirstLetter(this.fsq.section.name);
-      if (state) this.seo.setTitle(`${section} Places near me in ${this.title}, ${state}-${cc}`)
-      else this.seo.setTitle(`${section} Places near me in ${this.title}, ${cc}`)
+      if (state) this.seo.setTitle(`${section} Places - ${this.title}, ${state}-${cc}`)
+      else this.seo.setTitle(`${section} Places n- ${this.title}, ${cc}`)
     }
     this.seo.setDescription(this.seo.title.getTitle() + ' (' + res?.length + ' results)');
     this.setKeywords(res);
-    this.seo.setImg('https://twosteps.herokuapp.com/assets/img/brand.png')
+    this.seo.setImg('https://twosteps.vercel.app/assets/img/brand.png')
   }
 
   setKeywords = (res: any) => {
