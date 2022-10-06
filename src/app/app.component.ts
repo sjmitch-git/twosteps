@@ -17,6 +17,7 @@ export class AppComponent {
   ) {
     this.router.events.subscribe(value => {
       if(value instanceof NavigationEnd) {
+        console.log('page_path', this.router.url.toString())
         gtag('config', 'UA-UA-125394580-9', {'page_path':this.router.url.toString()});
       }    
     });
