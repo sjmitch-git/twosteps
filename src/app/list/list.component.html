@@ -5,9 +5,9 @@
         </div>
         <div class="col-12">
             <h1 class='text-capitalize mb-4'>{{fsq.section?.name}}<br/>
-                <small class='text-muted me-3 my-2'>{{title}}</small> 
-                <button class='btn btn-sm btn-primary' *ngIf="!loading" (click)='ms.togglefullscreen()' title='View Map'>
-                    Map
+                <small class='text-muted me-3 my-2 display-1'>{{title}}</small> 
+                <button class='btn btn-sm btn-primary mb-5' *ngIf="!loading" (click)='ms.togglefullscreen()' title='View Map'>
+                    MAP
                 </button>
             </h1>
         </div>
@@ -18,7 +18,7 @@
     <div class='text-center' *ngIf="loading">
         <loading></loading>
     </div>
-    <div class="row g-2 mb-5" results></div>
+    <div class="row g-2 mb-5" results *ngIf="!loading"></div>
     <div class="row" *ngIf="isBrowser">
         <div class="col-12 mx-auto">
             <div app-map [data]='fsq.results'></div>

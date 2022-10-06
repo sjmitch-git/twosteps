@@ -159,6 +159,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   goVenue = (id: string) => {
+    this.ms.fullscreen = false;
     this.router.navigate(['/venue'], { 
       queryParams: { id: id}
     });
@@ -204,6 +205,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
     if (this.data && !datachange.firstChange) this.addMarkers(this.data);
     let venuechange = changes['venue']
     if (this.venue && !venuechange.firstChange) this.setVenue(this.venue);
+    this.ms.loaded = true;
   }
 
 }

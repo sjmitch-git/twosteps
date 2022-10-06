@@ -85,7 +85,7 @@ export class GetnearbyComponent implements OnInit {
   }
 
   search = () => {
-    if(/Google|Baidu|Baiduspider/.test(navigator.userAgent)) return;
+   // if(/Google|Baidu|Baiduspider/.test(navigator.userAgent)) return;
     this.error = '';
     this.loading = true;
     this.results = [];
@@ -100,7 +100,7 @@ export class GetnearbyComponent implements OnInit {
   }
 
   findNearby = (lat: string, lng: string) => {
-    if(/Google|Baidu|Baiduspider/.test(navigator.userAgent)) return;
+    // if(/Google|Baidu|Baiduspider/.test(navigator.userAgent)) return;
     this.geoResults = [];
     this.geo.findNearby(lat,lng).subscribe((res : any)=>{
       this.geoResults = this.filter(res.geonames);

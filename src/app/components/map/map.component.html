@@ -35,11 +35,11 @@
 
 <div id='map-c' class='map-container mb-5'>
     <div id='map' [ngClass]="{'fullscreen': ms.fullscreen}">
-        <button class='btn btn-light btn-fullscreen' (click)='ms.togglefullscreen()' title='Toggle fullscreen'>
+        <button class='btn btn-light btn-fullscreen' (click)='ms.togglefullscreen()' title='Toggle fullscreen' *ngIf="ms.loaded">
             <img src='assets/img/compress-arrows-alt.svg' width=15 alt='Close fullscreen' *ngIf="ms.fullscreen">
             <img src='assets/img/expand.svg' width=15 alt='Open fullscreen'*ngIf="!ms.fullscreen">
         </button>
-        <button class='btn btn-light btn-tiles' (click)='changeTiles()' title='Change tiles'>
+        <button class='btn btn-light btn-tiles' (click)='changeTiles()' title='Change tiles' *ngIf="ms.loaded">
             <img src='assets/img/layer-group.svg' width=15 alt='layers'>
         </button>
     </div>

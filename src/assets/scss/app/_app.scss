@@ -21,7 +21,9 @@ a {
     background-color: var(--bs-purple);
     border-color: var(--bs-purple);
 }
-
+.bg-lightgrey {
+    background-color: #dee2e6;
+}
 .bg-red {
     background-color: #d63e2a;
 }
@@ -90,4 +92,8 @@ a {
 
 .sr-only {
     display: none;
+}
+
+.blockquote {
+    border: thin solid #dee2e6;
 }

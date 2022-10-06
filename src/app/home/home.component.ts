@@ -12,7 +12,7 @@ import { FoursquareService } from "../services/foursquare.service";
 export class HomeComponent implements OnInit {
 
   title: string = 'Find Nearby';
-  description: string = 'Restaurants, bars, shops, cafés, hotels, museums, galleries, cinemas, theatres, parks, gardens';
+  description: string = 'Popular places, Restaurants, bars, cafés, shops, arts, outdoors, hotels';
   destinations?: any[];
 
   constructor(

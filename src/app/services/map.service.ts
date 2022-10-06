@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class MapService {
 
   fullscreen: boolean = false;
+  loaded: boolean = false;
   currentTile?: any[];
   tileLayers: any = {
     alidade_smooth: 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png',
