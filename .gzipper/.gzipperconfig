@@ -132,16 +132,6 @@
           }
         ]
       },
-      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\assets\\img\\whatsapp.svg": {
-        "revisions": [
-          {
-            "lastChecksum": "143c9a511088b6dfa7745a5a38eeacf1",
-            "fileId": "376f9672-7f75-4d1a-bbc6-185be1fc14c7",
-            "date": "2021-09-06T13:10:36.854Z",
-            "options": {}
-          }
-        ]
-      },
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\assets\\img\\angle-double-up.svg": {
         "revisions": [
           {
@@ -202,6 +192,26 @@
           }
         ]
       },
+      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\3rdpartylicenses.txt": {
+        "revisions": [
+          {
+            "lastChecksum": "577fdf5df614f36a21fd3aa3821f7554",
+            "fileId": "7a9f0c2f-6419-4571-97ca-582c51b5d40a",
+            "date": "2022-10-07T13:25:25.443Z",
+            "options": {}
+          }
+        ]
+      },
+      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\assets\\img\\whatsapp.svg": {
+        "revisions": [
+          {
+            "lastChecksum": "143c9a511088b6dfa7745a5a38eeacf1",
+            "fileId": "376f9672-7f75-4d1a-bbc6-185be1fc14c7",
+            "date": "2021-09-06T13:10:36.854Z",
+            "options": {}
+          }
+        ]
+      },
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\assets\\scss\\vendors\\_bootstrap.scss": {
         "revisions": [
           {
@@ -225,29 +235,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\index.html": {
         "revisions": [
           {
-            "lastChecksum": "bf31b9a14cd5006d2f6bd8588553ed99",
+            "lastChecksum": "f6038449e52eaac9096991b24d5af48d",
             "fileId": "1b06aadf-c71d-4694-8cd0-bbc5d2844205",
-            "date": "2021-09-12T11:46:56.817Z",
-            "options": {}
-          }
-        ]
-      },
-      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\main.js": {
-        "revisions": [
-          {
-            "lastChecksum": "3e0bb0ce917ad8e38e6b57750ba515a3",
-            "fileId": "dcd37be9-9143-495f-8ef5-5e92348acfb1",
-            "date": "2021-09-20T13:10:34.756Z",
-            "options": {}
-          }
-        ]
-      },
-      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\main.js.map": {
-        "revisions": [
-          {
-            "lastChecksum": "be8a03dc95b2ca93ee81d22e7adb58dc",
-            "fileId": "f5ac9428-3184-4884-b375-e2cb61d5a589",
-            "date": "2021-09-20T13:10:34.858Z",
+            "date": "2022-10-07T13:25:27.702Z",
             "options": {}
           }
         ]
@@ -275,49 +265,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\ngsw.json": {
         "revisions": [
           {
-            "lastChecksum": "3bf2cbbd2f89b5a8f5a2b86369415491",
+            "lastChecksum": "8535957d50089ef3322d204256c06cff",
             "fileId": "63245937-971c-4571-8a6a-bafc34a66e48",
-            "date": "2021-09-20T13:10:35.027Z",
-            "options": {}
-          }
-        ]
-      },
-      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\polyfills.js": {
-        "revisions": [
-          {
-            "lastChecksum": "6c08e5ab29fec0a2e7185f4bca1646da",
-            "fileId": "6758edf7-b08c-47ea-ba94-cc7add3e604a",
-            "date": "2021-09-06T13:10:36.621Z",
-            "options": {}
-          }
-        ]
-      },
-      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\polyfills.js.map": {
-        "revisions": [
-          {
-            "lastChecksum": "93e81e1d2d0cf104ba3c44620a4372b8",
-            "fileId": "bcfdaa15-cb44-4feb-bbae-015f5c7705be",
-            "date": "2021-09-06T13:10:36.758Z",
-            "options": {}
-          }
-        ]
-      },
-      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\runtime.js": {
-        "revisions": [
-          {
-            "lastChecksum": "eb139ba96e453b07958bddde1ccd825e",
-            "fileId": "9b5bb950-bfc3-4240-868e-ccad0dd80f89",
-            "date": "2021-09-07T07:49:43.040Z",
-            "options": {}
-          }
-        ]
-      },
-      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\runtime.js.map": {
-        "revisions": [
-          {
-            "lastChecksum": "2810cdf6204dd1e731bbf4d584a0b24a",
-            "fileId": "cf2dce67-99c4-4ad9-9659-8c6f4f983860",
-            "date": "2021-09-07T07:49:43.060Z",
+            "date": "2022-10-07T13:25:29.402Z",
             "options": {}
           }
         ]
@@ -328,46 +278,6 @@
             "lastChecksum": "5577226b5bba3fb5f1e2de285bba1566",
             "fileId": "a0829f31-e28c-4bec-b3e4-9781087569f8",
             "date": "2021-09-06T13:10:37.024Z",
-            "options": {}
-          }
-        ]
-      },
-      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\styles.css": {
-        "revisions": [
-          {
-            "lastChecksum": "dfb7f09b4a91b9924b5d7992a4f7a78e",
-            "fileId": "0beab715-9024-4c35-9f2f-27a775afca55",
-            "date": "2021-09-12T11:46:58.917Z",
-            "options": {}
-          }
-        ]
-      },
-      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\styles.css.map": {
-        "revisions": [
-          {
-            "lastChecksum": "851ee99173f1696f86b1338c563ddd5d",
-            "fileId": "dd3edfc1-450e-4f04-a21c-5d8aedaa7cd2",
-            "date": "2021-09-12T11:46:59.430Z",
-            "options": {}
-          }
-        ]
-      },
-      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\vendor.js": {
-        "revisions": [
-          {
-            "lastChecksum": "182283298d68027149206321e1e4669d",
-            "fileId": "2f3589d3-bf34-4e99-ad0e-c5b20a1d8a9d",
-            "date": "2021-09-07T07:49:43.179Z",
-            "options": {}
-          }
-        ]
-      },
-      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\vendor.js.map": {
-        "revisions": [
-          {
-            "lastChecksum": "f8b23db87016a6e62b967af626c08d09",
-            "fileId": "8fc38851-1109-4b21-8ed8-75b27f7dcdab",
-            "date": "2021-09-07T07:49:43.388Z",
             "options": {}
           }
         ]
@@ -385,9 +295,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\server\\3rdpartylicenses.txt": {
         "revisions": [
           {
-            "lastChecksum": "a71ae0ef33260f68a97c967226bc3008",
+            "lastChecksum": "21091355178dc435c42a33b395ea7db8",
             "fileId": "fc2c2f2a-c256-4e10-976b-8190b5cc5dd7",
-            "date": "2021-09-12T11:12:10.926Z",
+            "date": "2022-10-07T13:25:30.086Z",
             "options": {}
           }
         ]
@@ -395,9 +305,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\server\\main.js": {
         "revisions": [
           {
-            "lastChecksum": "3b41420ad996063d77e2b846a401dc37",
+            "lastChecksum": "e77031881ba9df5f544b56528797001c",
             "fileId": "1cff0ecf-18b8-41b5-89fc-720c22e6d158",
-            "date": "2021-09-20T13:10:35.703Z",
+            "date": "2022-10-07T13:25:30.186Z",
             "options": {}
           }
         ]
@@ -405,19 +315,9 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\robots.txt": {
         "revisions": [
           {
-            "lastChecksum": "26ececc26a40d995b38c75ad3a47fc02",
+            "lastChecksum": "d563ea478c5b613ef24a08563f5fae73",
             "fileId": "c3a42462-e951-45e7-8ca4-912e4b966d8e",
-            "date": "2021-09-07T12:33:54.694Z",
-            "options": {}
-          }
-        ]
-      },
-      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\sitemap.xml": {
-        "revisions": [
-          {
-            "lastChecksum": "3dc72f46d14460e7ddab893ad79e0cc6",
-            "fileId": "6c222fe4-6a8b-4b73-9ef3-4be02d95d4fd",
-            "date": "2021-09-12T00:38:30.236Z",
+            "date": "2022-10-07T13:25:29.710Z",
             "options": {}
           }
         ]
@@ -435,9 +335,59 @@
       "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\assets\\scss\\_core.scss": {
         "revisions": [
           {
-            "lastChecksum": "52b5f3ac50db5c19c61c028601f2ef4f",
+            "lastChecksum": "bf5bd1aa101e6264ed043885d5459576",
             "fileId": "e0c3aef5-94bd-459b-ae51-f10441b7b377",
-            "date": "2021-09-12T11:46:56.682Z",
+            "date": "2022-10-07T13:25:27.534Z",
+            "options": {}
+          }
+        ]
+      },
+      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\assets\\scss\\app\\_app.scss": {
+        "revisions": [
+          {
+            "lastChecksum": "d0e316bb28845aa07bb1772451374608",
+            "fileId": "a11b1bab-76af-4979-b3aa-8c67b1bd72fd",
+            "date": "2022-10-07T13:25:25.950Z",
+            "options": {}
+          }
+        ]
+      },
+      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\main.45a8602695b34fb85259.js": {
+        "revisions": [
+          {
+            "lastChecksum": "90dbf15501ed0e65cd0c2e013bc508e9",
+            "fileId": "597c6ce6-5315-4a3d-916e-df0fdd2a9caf",
+            "date": "2022-10-07T13:25:28.298Z",
+            "options": {}
+          }
+        ]
+      },
+      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\polyfills.0f055d922cf4ce3b5c62.js": {
+        "revisions": [
+          {
+            "lastChecksum": "a84f3df027fa1b6fe5f800da6c44c720",
+            "fileId": "1044ce1c-e10e-4dd0-a1bc-dd9fcbf6ef12",
+            "date": "2022-10-07T13:25:29.496Z",
+            "options": {}
+          }
+        ]
+      },
+      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\runtime.32a904e4252c183b83fe.js": {
+        "revisions": [
+          {
+            "lastChecksum": "9aa89b2609c7243533fa78d9b8eca01f",
+            "fileId": "39319d7a-4219-45be-9ddc-1e35641db625",
+            "date": "2022-10-07T13:25:29.821Z",
+            "options": {}
+          }
+        ]
+      },
+      "C:\\Users\\Stephen\\Documents\\APPS\\twosteps\\dist\\twosteps\\browser\\styles.f6a75973061820676c3e.css": {
+        "revisions": [
+          {
+            "lastChecksum": "4edd8fdcbd8519f2d64d7644fb8ff335",
+            "fileId": "4f97bd04-0c13-4a11-a185-d484a96b0e1d",
+            "date": "2022-10-07T13:25:29.962Z",
             "options": {}
           }
         ]

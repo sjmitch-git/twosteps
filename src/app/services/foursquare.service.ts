@@ -12,7 +12,7 @@ export class FoursquareService {
   v: number = 20200820;
   endpoint: string = 'https://api.foursquare.com/v2/';
   venues: string = 'venues/';
-  radius: number = 5000;
+  radius: number = 10000;
   limit: number = 24;
   CLIENT_ID?: string;
   CLIENT_SECRET?: string;
