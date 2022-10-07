@@ -17,4 +17,4 @@ Allow: /images
 User-agent: facebookexternalhit
 Allow: /images
 
-Sitemap: https://twosteps.vercel.app/sitemap.xml
+Sitemap: https://twosteps.vercel.app/sitemap/sitemap-index.xml
