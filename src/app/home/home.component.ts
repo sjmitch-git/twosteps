@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.seo.setTitle('Two Steps: ' + this.title)
     this.seo.setDescription(this.description)
     this.seo.setKeywords([this.description])
-    this.seo.setImg('https://twosteps.herokuapp.com/assets/img/brand.png')
+    this.seo.setImg('https://twosteps.vercel.app/assets/img/brand.png')
   }
 
 }
