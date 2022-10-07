@@ -46,7 +46,7 @@
               </p>
 
               <p class='text-success h3' *ngIf='fsq.venue.likes && fsq.venue.likes.count > 0'>
-                {{fsq.venue.likes.count | number}} user likes
+                {{fsq.venue.likes.count | number}} / {{fsq.venue.ratingSignals}} user likes
               </p>
   
               <p class='text-danger h3' *ngIf='fsq.venue.dislikes'>
@@ -142,11 +142,11 @@
               </span> -->
           </div>
 
-            <div id='contacts' *ngIf='fsq.venue.contact?.length'  class='mb-4 mx-auto col-12 col-lg-8'>
+            <div id='contacts' *ngIf="(fsq.venue.contact | keyvalue)?.length"  class='mb-4 mx-auto col-12 col-lg-8'>
 
                 <h4 class='h4 mb-3 text-muted'>Contact</h4>
       
-                <div class=''>
+                <div class='d-flex flex-wrap'>
       
                   <dl class='col-12 col-md-6' *ngIf='fsq.venue.contact.phone'>
                     <dt class='text-muted'>
