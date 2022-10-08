@@ -5,6 +5,7 @@ import { FoursquareService } from "../services/foursquare.service";
 import { MapService } from "../services/map.service";
 import { SeoService } from "../services/seo.service";
 import { ScrolltoService } from "../services/scrollto.service";
+import { VenueComponent } from './venue/venue.component';
 
 @Component({
   selector: 'app-list',
@@ -64,6 +65,7 @@ export class ListComponent implements OnInit {
       if (res.response.warning) this.handleError(res.response)
       this.fsq.processResults(res.response.groups[0].items);
       this.title = res.response.headerFullLocation;
+      if (this.title === 'Current map view' && res.response.groups[0].items[0].venue.location.city) this.title = res.response.groups[0].items[0].venue.location.city;
       this.section = res.response.groups[0].type;
     }, (err) => {
       this.handleError(err)
@@ -120,7 +122,6 @@ export class ListComponent implements OnInit {
     let cc;
     let state;
     let cities = [];
-
     for (let i = 0; i < res.length; i++) {
       if (!city) {
         city =  res[i].location.city;
@@ -132,8 +133,9 @@ export class ListComponent implements OnInit {
     }
     
     if (this.path === 'search') {
-      if (state) this.seo.setTitle(`${this.title} in ${city}, ${state}-${cc}`)
-      else this.seo.setTitle(`${this.title} in ${city}, ${cc}`)
+      let title = this.capitalizeFirstLetter(this.title);
+      if (state) this.seo.setTitle(`${title} in ${city}, ${state}-${cc}`)
+      else this.seo.setTitle(`${title} in ${city}, ${cc}`)
     } else if (this.path === 'global') {
       let title = this.capitalizeFirstLetter(this.title);
       this.seo.setTitle(`World's most popular ${title}`);
