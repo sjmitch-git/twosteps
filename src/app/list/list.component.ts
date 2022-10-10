@@ -47,10 +47,7 @@ export class ListComponent implements OnInit {
   finally = () => {
     this.loading = false;
     this.updateSeo(this.fsq.results);
-    if (!this.isBrowser) return;
-    setTimeout(() => {
-      this.scroll.to('page');
-    }, 800);
+    if (this.isBrowser) this.scroll.to('page');
   }
 
   notconnected = () => {

@@ -34,7 +34,8 @@ export class GeonamesService {
       lng: lng,
       maxRows: this.maxRows,
       radius: this.radius,
-      username: this.username
+      username: this.username,
+      origin: '*'
     };
     let url: string = this.endpoint + 'findNearbyWikipediaJSON';
     return this.httpClient.get(url, {params: params});

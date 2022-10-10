@@ -15,7 +15,7 @@
     <div class='mx-auto col-12 col-lg-8' *ngIf="errors">
         <error [msg]='errors'></error>
     </div>
-    <div class='text-center' *ngIf="loading">
+    <div class='loading' *ngIf="loading">
         <loading></loading>
     </div>
     <div class="row g-2 mb-5" results *ngIf="!loading"></div>
@@ -50,7 +50,7 @@
         </div>
         <div class="col-12 text-center">
             <a class='btn btn-primary' [routerLink]="['/global']" [queryParams]="{n:title}">
-                Find {{title}} trending globally
+                Find <span class="text-uppercase">{{title}}</span> trending globally
             </a>
         </div>
     </div>
