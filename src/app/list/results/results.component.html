@@ -60,7 +60,7 @@
             <div class='div-icon bg-{{item.color}}'>
                 <img src="{{item.icon}}" width=30>
             </div>
-            <span *ngIf="item.distance">
+            <span *ngIf="item.distance || item.distance === 0">
                 {{item.distance / 1000 | number: '1.1-2'}} km
             </span>
         </div>

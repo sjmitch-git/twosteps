@@ -46,7 +46,7 @@
               </p>
 
               <p class='text-success h3' *ngIf='fsq.venue.likes && fsq.venue.likes.count > 0'>
-                {{fsq.venue.likes.count | number}} / {{fsq.venue.ratingSignals}} user likes
+                {{fsq.venue.likes.count | number}}<span *ngIf="fsq.venue.ratingSignals"> / {{fsq.venue.ratingSignals}}</span> user likes
               </p>
   
               <p class='text-danger h3' *ngIf='fsq.venue.dislikes'>
@@ -80,7 +80,7 @@
                 <p class='p mb-0 pr-4 w-100 lang-{{tip.lang}} tip-{{tip.authorInteractionType}}'>
                 {{tip.text}}
 
-                <small class='small d-block lang-en' *ngIf='tip.likes.summary'>
+                <small class='small d-block lang-en mt-3' *ngIf='tip.likes.summary'>
                   <strong>{{tip.likes.summary}}</strong>
                 </small>
 
@@ -125,14 +125,14 @@
           <div *ngIf='fsq.venue.hours' class='mb-4 mx-auto col-12 col-lg-8'>
             <h4 class='h4 mb-3 w-100 text-muted'>Opening Hours</h4>
             <div>
-              <p class='h5'>
+              <p class='h5 mb-4'>
                 <span [ngClass]='{"text-danger": !fsq.venue.hours.isOpen, "text-success": fsq.venue.hours.isOpen}'>{{fsq.venue.hours.status || "Closed"}}</span>
               </p>
-              <p class='h5' *ngIf='fsq.venue.hours.isLocalHoliday'>
+              <p class='h5 mb-4' *ngIf='fsq.venue.hours.isLocalHoliday'>
                 <span class='text-warning'>Today is a local holiday</span>
               </p>
-              <p class="mb-2 pb-2 clearfix" *ngFor='let item of fsq.venue.hours.timeframes'>
-                <span class=''>{{item.days}}</span> 
+              <p class="mb-2 pb-2 clearfix row" *ngFor='let item of fsq.venue.hours.timeframes'>
+                <span class='fw-bold'>{{item.days}}</span> 
                 <span *ngFor='let x of item.open' class='float-end clear-end'>{{x.renderedTime === "None" ? "Closed" : x.renderedTime}}</span>
               </p>
             </div>

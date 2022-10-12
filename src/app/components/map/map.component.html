@@ -29,7 +29,10 @@
         right: 10px;
         top: 10px;
     }
-
+    .btn-user {
+        right: 10px;
+        top: 50px;
+    }
     
 </style>
 
@@ -41,6 +44,9 @@
         </button>
         <button class='btn btn-light btn-tiles' (click)='changeTiles()' title='Change tiles' *ngIf="ms.loaded">
             <img src='assets/img/layer-group.svg' width=15 alt='layers'>
+        </button>
+        <button class='btn btn-warning btn-user' [ngClass]="{'btn-light': !ms.userOn}" (click)='toggleUser()' title='Toggle your location' *ngIf="maptype == 'venue'">
+            <img src='assets/img/user.svg' width=15 alt='layers'>
         </button>
     </div>
 </div>

@@ -5,7 +5,7 @@ import { FoursquareService } from "../services/foursquare.service";
 import { MapService } from "../services/map.service";
 import { SeoService } from "../services/seo.service";
 import { ScrolltoService } from "../services/scrollto.service";
-import { VenueComponent } from './venue/venue.component';
+// import { VenueComponent } from './venue/venue.component';
 
 @Component({
   selector: 'app-list',
@@ -142,23 +142,26 @@ export class ListComponent implements OnInit {
       if (state) this.seo.setTitle(`${section} Places in ${this.title}, ${state}-${cc}`)
       else this.seo.setTitle(`${section} Places in ${this.title}, ${cc}`)
     }
-    this.seo.setDescription(this.seo.title.getTitle() + ' (' + res?.length + ' results)');
-    this.setKeywords(res);
+    this.processSeo(res);
     this.seo.setImg('https://twosteps.vercel.app/assets/img/brand.png')
   }
 
-  setKeywords = (res: any) => {
+  processSeo = (res: any) => {
     let keywords: any[] = [];
+    let places: any[] = [];
     for (let index = 0; index < res.length; index++) {
       const el = res[index];
       keywords.push(el.name)
+      places.push(el.name)
       for (let i = 0; i < el.categories.length; i++) {
         const cat = el.categories[i];
         keywords.push(cat.pluralName)
       }
     }
     keywords = [...new Set(keywords)];
+    places = [...new Set(places)];
     this.seo.setKeywords(keywords)
+    this.seo.setDescription(res?.length + ' results: ' + places.toString());
   }
 
   capitalizeFirstLetter = (str:string) => {

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Input, OnChanges, SimpleChanges, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, Input, OnChanges, SimpleChanges, PLATFORM_ID, Inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -13,7 +13,7 @@ declare let L: any;
   styles: [
   ]
 })
-export class MapComponent implements OnInit, AfterViewInit, OnChanges {
+export class MapComponent implements OnInit, OnDestroy, AfterViewInit, OnChanges {
 
   lon: number = 0;
   lat: number = 0;
@@ -27,6 +27,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
   Transport: number = 3;
   OpenCycleMap: number = 4;
   tileCounter: number = 0;
+  usermarker: any;
 
   @Input() data?: any[];
   @Input() venue?: any[];
@@ -57,6 +58,46 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
     if (this.tileCounter === this.ms.tiles.length -1) this.tileCounter = 0;
     else this.tileCounter ++;
     this.selectTiles(this.tileCounter);
+  }
+
+  getLocation(): void{
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position)=>{
+          this.user.lon = position.coords.longitude;
+          this.user.lat = position.coords.latitude;
+          this.addUser(this.user.lon, this.user.lat)
+        });
+    } else {
+       console.log("No support for geolocation")
+    }
+  }
+
+  addUser = (lon: number, lat: number) => {
+    let bounds: any[] = []
+    bounds.push(this.map.getBounds())
+    bounds.push({lat: lat,lng: lon});
+    let userIcon = L.divIcon({
+      className:'user-icon',
+      html:'<img src="../../../assets/img/user.svg" width=30>',
+      iconAnchor:[0,0],
+      popupAnchor:[15, 0]
+    });
+    this.usermarker = L.marker([lat, lon], {icon: userIcon}).addTo(this.map)
+      .bindPopup('Your location')
+    this.map.fitBounds(bounds, { padding: [20, 20] });
+  }
+
+  removeUser = () => {
+    this.map.removeLayer(this.usermarker);
+    this.map.panTo(new L.LatLng(this.lat, this.lon));
+    setTimeout(() => {
+      this.map.setZoom(17);
+    }, 900);  
+  }
+
+  toggleUser = () => {
+    this.ms.userOn = !this.ms.userOn
+    this.ms.userOn ? this.getLocation(): this.removeUser()
   }
 
   addMarkers = (arr: any[]) => {
@@ -144,6 +185,7 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
       });
       this.map.on('popupopen', function(e: any) {
         let el = document.getElementsByClassName('popup');
+        if (!el || !el.length) return;
         let id = el[0].getAttribute('id') as string;
         el[0].addEventListener('click', function () {
           that.goVenue(id);
@@ -167,16 +209,19 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
 
   setVenue = (v: any) => {
     if (!this.isBrowser) return;
+    this.maptype = 'venue'
     let that = this;
     this.lat = v.location.lat;
     this.lon = v.location.lng;
     let originalTile: any = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19});
-    this.map = L.map('map', {
+    if (!this.map) {this.map = L.map('map', {
       center:[this.lat, this.lon],
-      zoom: 16,
+      zoom: 17,
       attributionControl: false,
       layers:  originalTile
-    });
+    });} else {
+      this.map.panTo(new L.LatLng(this.lat, this.lon));
+    }
     let popup = '<div class="popup box-shadow-dark" id="' + v.id + '"><h5 class="mb-0">' + v.name + '</h5><p>' + v.categories[0].name + '</p></div>';
     let icon = v.categories[0].icon.prefix + '32.png';
     let venueIcon = L.divIcon({
@@ -206,6 +251,10 @@ export class MapComponent implements OnInit, AfterViewInit, OnChanges {
     let venuechange = changes['venue']
     if (this.venue && !venuechange.firstChange) this.setVenue(this.venue);
     this.ms.loaded = true;
+  }
+
+  ngOnDestroy() {
+    this.ms.userOn = false;
   }
 
 }
