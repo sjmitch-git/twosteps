@@ -92,6 +92,7 @@ export class MapComponent implements OnInit, OnDestroy, AfterViewInit, OnChanges
     this.map.panTo(new L.LatLng(this.lat, this.lon));
     setTimeout(() => {
       this.map.setZoom(17);
+      this.map.panTo(new L.LatLng(this.lat, this.lon));
     }, 900);  
   }
 
@@ -249,7 +250,8 @@ export class MapComponent implements OnInit, OnDestroy, AfterViewInit, OnChanges
     let datachange = changes['data']
     if (this.data && !datachange.firstChange) this.addMarkers(this.data);
     let venuechange = changes['venue']
-    if (this.venue && !venuechange.firstChange) this.setVenue(this.venue);
+    // if (this.venue && !venuechange.firstChange) this.setVenue(this.venue);
+    if (this.venue) this.setVenue(this.venue);
     this.ms.loaded = true;
   }
 

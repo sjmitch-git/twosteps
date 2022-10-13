@@ -23,7 +23,20 @@
             </ol>
         </nav>
         <div class="col-12">
+          <div *ngIf='fsq.venue?.page?.pageInfo' class='row mb-4'>
+            <figure *ngIf='fsq.venue.page.pageInfo.banner' class="text-center m-auto w-auto position-relative mb-4">
+              <img [src]='fsq.venue.page.pageInfo.banner' class="img-fluid bg-light border" />
+              <a href='{{fsq.venue.url}}' target='_blank' class='position-absolute top-0 start-0 w-100 h-100' [title]="fsq.venue.url"  *ngIf='fsq.venue.url'></a>
+              <figcaption class='pt-3 px-4 col-12 col-lg-8 text-center mx-auto' *ngIf='fsq.venue.page.pageInfo.description'>
+                "{{fsq.venue.page.pageInfo.description}}" 
+                <small class="d-block text-end mt-2">-- {{fsq.venue.page.user.firstName}} {{fsq.venue.page.user.lastName}}</small>
+              </figcaption>
+            </figure>
+            </div>
             <h1 class='text-capitalize text-center display-1 mb-4'>{{fsq.venue.name}}</h1>
+            <p *ngIf='fsq.venue.location' class="text-center h4 mb-4">
+              {{fsq.venue.location.formattedAddress.join(', ')}}
+            </p>
             <div *ngIf='fsq.venue.categories' class="justify-content-center d-flex">
               <p *ngFor="let item of fsq.venue.categories" class='me-3'>
                   <span class="text-uppercase" >{{item.name}}</span>
@@ -32,21 +45,18 @@
             <p class="lead col-12 col-lg-8 mx-auto text-center" *ngIf="fsq.venue.description">
                 {{fsq.venue.description}}
             </p>
-            <p *ngIf='fsq.venue.location' class="text-center">
-                {{fsq.venue.location.formattedAddress.join(', ')}}
-            </p>
             
-            <div class='text-center'>
+            
+            <div class='text-center mb-4'>
 
               <p *ngIf='fsq.venue.rating'>
                <span class='display-1 d-block' [style.color]="'#' + fsq.venue.ratingColor">
                 {{fsq.venue.rating * 10}}%
                </span>
-               user rating
               </p>
 
-              <p class='text-success h3' *ngIf='fsq.venue.likes && fsq.venue.likes.count > 0'>
-                {{fsq.venue.likes.count | number}}<span *ngIf="fsq.venue.ratingSignals"> / {{fsq.venue.ratingSignals}}</span> user likes
+              <p class='h3 text-muted' *ngIf='fsq.venue.likes && fsq.venue.likes.count > 0'>
+                <span [style.color]="'#' + fsq.venue.ratingColor">{{fsq.venue.likes.count | number}}</span><span *ngIf="fsq.venue.ratingSignals"> / {{fsq.venue.ratingSignals | number}}</span> user likes
               </p>
   
               <p class='text-danger h3' *ngIf='fsq.venue.dislikes'>
@@ -75,7 +85,7 @@
             <div class='mb-2'>
               <h4 class='h4 mb-3 text-muted'>User Tips</h4>
             </div>
-            <blockquote class='blockquote p-2 rounded bg-white' *ngFor='let tip of fsq.venue._tips'>
+            <blockquote class='blockquote tip p-2 rounded bg-white' *ngFor='let tip of fsq.venue._tips'>
               <div class='d-flex'>
                 <p class='p mb-0 pr-4 w-100 lang-{{tip.lang}} tip-{{tip.authorInteractionType}}'>
                 {{tip.text}}
@@ -122,7 +132,7 @@
             </div>
           </div>
 
-          <div *ngIf='fsq.venue.hours' class='mb-4 mx-auto col-12 col-lg-8'>
+          <div *ngIf='fsq.venue.hours' class='mb-4 mx-auto col-12 col-lg-8 bg-lightgrey p-4'>
             <h4 class='h4 mb-3 w-100 text-muted'>Opening Hours</h4>
             <div>
               <p class='h5 mb-4'>
@@ -142,7 +152,7 @@
               </span> -->
           </div>
 
-            <div id='contacts' *ngIf="(fsq.venue.contact | keyvalue)?.length"  class='mb-4 mx-auto col-12 col-lg-8'>
+            <div id='contacts' *ngIf="(fsq.venue.contact | keyvalue)?.length"  class='mb-4 mx-auto col-12 col-lg-8 bg-lightgrey p-4'>
 
                 <h4 class='h4 mb-3 text-muted'>Contact</h4>
       
@@ -153,7 +163,7 @@
                       Phone
                     </dt>
                     <dd class=''>
-                      <a href='tel:' href='tel:{{fsq.venue.contact.phone}}' class='noicon' target='_blank'>
+                      <a href='tel:' href='tel:{{fsq.venue.contact.phone}}' class="btn btn-info" title="Opens in new tab" target='_blank'>
                         {{fsq.venue.contact.formattedPhone}}
                       </a>
                     </dd>
@@ -164,8 +174,8 @@
                       Twitter
                     </dt>
                     <dd class=''>
-                      <a href='https:twitter.com/{{fsq.venue.contact.twitter}}' class='noicon' target='_blank' rel="noopener">
-                        {{fsq.venue.contact.twitter}}
+                      <a href='https:twitter.com/{{fsq.venue.contact.twitter}}' class="btn btn-info" title="Opens in new tab" target='_blank' rel="noopener">
+                        @{{fsq.venue.contact.twitter}}
                       </a>
                     </dd>
                   </dl>
@@ -175,7 +185,7 @@
                       Facebook
                     </dt>
                     <dd class=''>
-                      <a href='https:facebook.com/{{fsq.venue.contact.facebook}}' class='noicon' target='_blank'>
+                      <a href='https:facebook.com/{{fsq.venue.contact.facebook}}' class="btn btn-info" title="Opens in new tab" target='_blank'>
                         {{fsq.venue.contact.facebookName}}
                       </a>
                     </dd>
@@ -186,7 +196,7 @@
                       Instagram
                     </dt>
                     <dd class=''>
-                      <a href='https:instagram.com/{{fsq.venue.contact.instagram}}' class='noicon' target='_blank'>
+                      <a href='https:instagram.com/{{fsq.venue.contact.instagram}}' class="btn btn-info" title="Opens in new tab" target='_blank'>
                         {{fsq.venue.contact.instagram}}
                       </a>
                     </dd>
@@ -196,13 +206,13 @@
       
             </div>
 
-            <dl *ngIf='fsq.venue.url' class='mb-5 mx-auto col-12 col-lg-8'>
-              <dt class='text-muted'>
+            <dl *ngIf='fsq.venue.url' class='mb-5 mx-auto col-12 col-lg-8 bg-lightgrey p-4'>
+              <dt class='h4 mb-3 text-muted'>
                 Website
               </dt>
               <dd>
-                <a href='{{fsq.venue.url}}' target='_blank'>
-                  <span class=''>{{fsq.venue.url}}</span>
+                <a href='{{fsq.venue.url}}' target='_blank' class="btn btn-info" title="Opens in new tab">
+                  <span class=''>{{fsq.venue.urlTitle}}</span>
                 </a>
               </dd>
             </dl>
@@ -220,8 +230,8 @@
 
         </div>
     </div>
-    <div class="row" *ngIf="isBrowser">
-      <div class="col-12 col-lg-8 mx-auto">
+    <div class="" *ngIf="isBrowser">
+      <div class="col-12 col-md-8 mx-auto">
           <div app-map [venue]='fsq.venue'></div>
       </div>
   </div>

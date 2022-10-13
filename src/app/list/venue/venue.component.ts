@@ -57,6 +57,7 @@ export class VenueComponent implements OnInit {
 
   getVenue = (id: string) => {
     this.loading = true;
+    this.modal.images = []
     this.fsq.getVenue(id).subscribe((res : any)=>{
       this.fsq.venue = this.fsq.processVenue(res.response.venue);
     }, (err) => {
@@ -69,10 +70,17 @@ export class VenueComponent implements OnInit {
   updateSeo = (v: any) => {
     this.title = v.name + ' (' + v.categories[0].name + ') ' + (v.location.city || v.location.postalCode || v.location.country);
     this.seo.setTitle(this.title);
-    if (v.gallery && v.gallery.length) this.seo.setImg(v.gallery[0].src);
+    if (v.gallery && v.gallery.length) {
+      this.seo.setImg(v.gallery[0].src);
+      this.updateModal(v.gallery)
+    }
     this.setDescription(this.fsq.venue);
     this.seo.setVenueKeywords(this.fsq.venue);
     if (v.location) this.seo.setLocation(v.location);
+  }
+
+  updateModal = (gallery: any[]) => {
+    this.modal.images.push(gallery)
   }
 
   setDescription = (v:any) => {

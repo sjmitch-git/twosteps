@@ -207,10 +207,17 @@ export class FoursquareService {
 
   processVenue(venue: any) {
     //venue.icon = this.getIcon(venue);
+    this.trimUrl(venue)
     this.buildGallery(venue);
     this.processTips(venue);
     this.getHours(venue);
     return venue;
+  }
+
+  trimUrl(venue: any) {
+    if (!venue.url) return venue;
+    venue.urlTitle = venue.name.split(' (')[0]
+    return venue
   }
 
   getHours(venue: any) {
