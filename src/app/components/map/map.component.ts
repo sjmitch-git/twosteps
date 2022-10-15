@@ -19,6 +19,7 @@ export class MapComponent implements OnInit, OnDestroy, AfterViewInit, OnChanges
   lat: number = 0;
   map?: any;
   markers?: any;
+  venueMarker?: any;
   maptype?: string;
   isBrowser: boolean = false;
   alidade_smooth: number = 0;
@@ -210,6 +211,7 @@ export class MapComponent implements OnInit, OnDestroy, AfterViewInit, OnChanges
 
   setVenue = (v: any) => {
     if (!this.isBrowser) return;
+    if (this.venueMarker) this.map.removeLayer(this.venueMarker);
     this.maptype = 'venue'
     let that = this;
     this.lat = v.location.lat;
@@ -241,7 +243,7 @@ export class MapComponent implements OnInit, OnDestroy, AfterViewInit, OnChanges
         queryParams: { lat: latlng.lat, lon: latlng.lng}
       });
     });
-    let venueMarker = L.marker([this.lat, this.lon], {
+    this.venueMarker = L.marker([this.lat, this.lon], {
       icon: venueIcon,
     }).addTo(this.map).bindPopup(popup);
   }
@@ -257,6 +259,7 @@ export class MapComponent implements OnInit, OnDestroy, AfterViewInit, OnChanges
 
   ngOnDestroy() {
     this.ms.userOn = false;
+    console.log('destroy', this)
   }
 
 }
