@@ -259,7 +259,6 @@ export class MapComponent implements OnInit, OnDestroy, AfterViewInit, OnChanges
 
   ngOnDestroy() {
     this.ms.userOn = false;
-    console.log('destroy', this)
   }
 
 }
