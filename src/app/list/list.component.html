@@ -43,7 +43,7 @@
             </div>
         </div>
     </div>
-    <getnearby></getnearby>
+    <getnearby *ngIf="isBrowser"></getnearby>
     <div class='row mb-5' *ngIf="fsq.path == 'search'">
         <div class="col-12 mb-3">
             <hr />
@@ -56,6 +56,6 @@
     </div>
     <hr class='mb-5'>
     <div class='mb-5'>
-        <search-geonames></search-geonames>
+        <search-geonames *ngIf="isBrowser"></search-geonames>
     </div>
 </div>
