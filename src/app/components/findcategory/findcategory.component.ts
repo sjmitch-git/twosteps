@@ -70,6 +70,9 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
         this.categories.sort((a, b) =>
           a.name > b.name ? 1 : b.name > a.name ? -1 : 0
         );
+        this.categoriesSimple = this.categories.map((cat, index) => {
+          return cat.name;
+        });
       },
       (err) => {
         this.seo.sendEvent('Error', 'Failed to download FSQ categories blob');
