@@ -1,68 +1,97 @@
 <div class="col-12">
-    <div class="row justify-content-between">
-        <div class="col-12 col-md-6 d-flex flex-wrap" *ngIf="fsq.path != 'global'">
-            <select class="form-select w-auto text-capitalize mb-2"  [(ngModel)]="section" name='selectsection' (change)="selectSection()">
-                <option disabled selected value='explore'>
-                    Explore
-                </option>
-                <option *ngFor="let item of sections" [value]="item">
-                    {{item}}
-                </option>
-            </select>
-            <select class="form-select w-auto mb-2 ms-3"  [(ngModel)]="fsq.radius" name='radius' (change)="selectRadius()">
-                <option *ngFor="let item of fsq.radius_options" [value]="item">
-                    {{item / 1000}} km
-                </option>
-            </select>
-           
-            </div>
-
-            <div class="col-12 col-md-6 d-flex flex-wrap" *ngIf="fsq.path == 'global'">
-                <getlocation></getlocation>
-            </div>
-
-            <div class="col-12 col-md-6 d-flex flex-wrap" *ngIf="fsq.results?.length">
-                
-                <select class="form-select w-auto text-capitalize ms-md-auto mb-2" [(ngModel)]="orderby" name='orderby' *ngIf="fsq.path != 'global'">
-                    <option *ngFor="let item of orderbyOptions" [value]="item">
-                        {{item}}
-                    </option>
-                </select>
-    
-                <div class="input-group w-auto ms-auto mb-2">
-                    <input type="text" class="form-control form-control-filter" [(ngModel)]='filter' placeholder="Filter results" aria-label="Filter" aria-describedby="basic-addon1" autocomplete="off">
-                    <div class="input-group-append" *ngIf='filter'>
-                      <button class="btn input-group-text text-muted border-left-0" (click)='filter = ""'>
-                        X
-                      </button>
-                    </div>
-                </div>
-        </div>
+  <div class="row justify-content-between">
+    <div class="col-12 col-md-6 d-flex flex-wrap" *ngIf="fsq.path != 'global'">
+      <select
+        class="form-select w-auto text-capitalize mb-2"
+        [(ngModel)]="section"
+        name="selectsection"
+        (change)="selectSection()"
+      >
+        <option disabled selected value="explore">Explore</option>
+        <option *ngFor="let item of sections" [value]="item">
+          {{ item }}
+        </option>
+      </select>
+      <select
+        class="form-select w-auto mb-2 ms-3"
+        [(ngModel)]="fsq.radius"
+        name="radius"
+        (change)="selectRadius()"
+      >
+        <option *ngFor="let item of fsq.radius_options" [value]="item">
+          {{ item / 1000 }} km
+        </option>
+      </select>
     </div>
+
+    <div class="col-12 col-md-6 d-flex flex-wrap" *ngIf="fsq.path == 'global'">
+      <getlocation></getlocation>
+    </div>
+
+    <div class="col-12 col-md-6 d-flex flex-wrap" *ngIf="fsq.results?.length">
+      <select
+        class="form-select w-auto text-capitalize ms-md-auto mb-2"
+        [(ngModel)]="orderby"
+        name="orderby"
+        *ngIf="fsq.path != 'global'"
+      >
+        <option *ngFor="let item of orderbyOptions" [value]="item">
+          {{ item }}
+        </option>
+      </select>
+
+      <div class="input-group w-auto ms-auto mb-2">
+        <input
+          type="text"
+          class="form-control form-control-filter"
+          [(ngModel)]="filter"
+          placeholder="Filter results"
+          aria-label="Filter"
+          aria-describedby="basic-addon1"
+          autocomplete="off"
+        />
+        <div class="input-group-append" *ngIf="filter">
+          <button
+            class="btn input-group-text text-muted border-left-0"
+            (click)="filter = ''"
+          >
+            X
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of fsq.results | sortby: orderby | filter : filter">
-    <div class="card">
-        <div class='card-body'>
-            <h5 class="card-title">
-                <a [routerLink]="['/venue']" rel='nofollow' [queryParams]="{id:item.id}" class='stretched-link text-reset'>
-                    {{item.name}}
-                </a>
-                <!-- <span *ngIf="item.popularity == 0" title='Most popular with 2Steps users'>⭐</span> <span *ngIf="item.nearest" title='Nearest to your search point'>👣</span> -->
-            </h5>
-            <p class="card-text" *ngIf="item.categories">
-                {{item.categories[0].name}}
-            </p>
-            <p class="card-text" *ngIf="item.location.formattedAddress">
-                {{item.location.formattedAddress[0]}}
-            </p>
-        </div>
-        <div class="card-footer bg-white d-flex justify-content-between">
-            <div class='div-icon bg-{{item.color}}'>
-                <img src="{{item.icon}}" width=30>
-            </div>
-            <span *ngIf="item.distance || item.distance === 0">
-                {{item.distance / 1000 | number: '1.1-2'}} km
-            </span>
-        </div>
+<div
+  class="col-12 col-sm-6 col-md-4 col-lg-3"
+  *ngFor="let item of fsq.results | sortby : orderby | filter : filter"
+>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">
+        <a
+          [routerLink]="['/venue']"
+          [queryParams]="{ id: item.id }"
+          class="stretched-link text-reset"
+        >
+          {{ item.name }}
+        </a>
+        <!-- <span *ngIf="item.popularity == 0" title='Most popular with 2Steps users'>⭐</span> <span *ngIf="item.nearest" title='Nearest to your search point'>👣</span> -->
+      </h5>
+      <p class="card-text" *ngIf="item.categories">
+        {{ item.categories[0].name }}
+      </p>
+      <p class="card-text" *ngIf="item.location.formattedAddress">
+        {{ item.location.formattedAddress[0] }}
+      </p>
     </div>
+    <div class="card-footer bg-white d-flex justify-content-between">
+      <div class="div-icon bg-{{ item.color }}">
+        <img src="{{ item.icon }}" width="30" />
+      </div>
+      <span *ngIf="item.distance || item.distance === 0">
+        {{ item.distance / 1000 | number : "1.1-2" }} km
+      </span>
+    </div>
+  </div>
 </div>
