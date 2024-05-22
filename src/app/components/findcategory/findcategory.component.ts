@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable, OperatorFunction } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import data from '../../../assets/data/categories.json';
 
 import { SeoService } from '../../services/seo.service';
 import { FoursquareService } from '../../services/foursquare.service';
@@ -44,7 +45,7 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
     );
 
   ngAfterViewInit(): void {
-    this.getCategories();
+    this.processCategories();
   }
 
   select = () => {
@@ -62,7 +63,18 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
     });
   };
 
-  getCategories() {
+  processCategories = () => {
+    this.fsq.categories = this.categories = data;
+    this.categories.sort((a, b) =>
+      a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+    );
+    this.categoriesSimple = this.categories.map((cat, index) => {
+      return cat.name;
+    });
+    console.log('processCategories', this.categories);
+  };
+
+  /* getCategories() {
     const url = this.jsonblob + this.jsonblobCategories;
     this.httpClient.get(url).subscribe(
       (res: any) => {
@@ -78,9 +90,9 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
         this.seo.sendEvent('Error', 'Failed to download FSQ categories blob');
       }
     );
-  }
+  } */
 
-  process(array: any[]) {
+  /* process(array: any[]) {
     let categories = [];
     let sub_categories = [];
     for (let index = 0; index < array.length; index++) {
@@ -112,5 +124,5 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
     }
     this.categoriesSimple.sort();
     return categories;
-  }
+  } */
 }
