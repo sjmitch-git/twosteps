@@ -1,9 +1,9 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable, OperatorFunction } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
-import { CategoriesService } from '../../data/categories.service';
+// import { CategoriesService } from '../../data/categories.service';
 
 import { SeoService } from '../../services/seo.service';
 import { FoursquareService } from '../../services/foursquare.service';
@@ -13,21 +13,20 @@ import { FoursquareService } from '../../services/foursquare.service';
   templateUrl: './findcategory.component.html',
   styles: [],
 })
-export class FindcategoryComponent implements OnInit, AfterViewInit {
-  jsonblob: string = 'https://jsonblob.com/api/jsonBlob/';
+export class FindcategoryComponent implements OnInit {
+  /* jsonblob: string = 'https://jsonblob.com/api/jsonBlob/';
   jsonblobCategories: string = '1242417492499750912';
-  categories: any[] = [];
+  categories: any[] = []; */
   category?: any;
-  categoriesSimple: any[] = [];
+  // categoriesSimple: any[] = [];
 
   constructor(
     private httpClient: HttpClient,
     private router: Router,
     private fsq: FoursquareService,
-    private seo: SeoService,
-    public categoriesService: CategoriesService
+    private seo: SeoService // public categoriesService: CategoriesService
   ) {
-    this.categories = categoriesService.data;
+    // this.categories = categoriesService.data;
   }
 
   ngOnInit(): void {}
@@ -41,18 +40,18 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
       map((term) =>
         term.length < 2
           ? []
-          : this.categoriesSimple
+          : this.fsq.categoriesSimple
               .filter((v) => v.toLowerCase().indexOf(term.toLowerCase()) > -1)
               .slice(0, 10)
       )
     );
 
-  ngAfterViewInit(): void {
+  /* ngAfterViewInit(): void {
     this.processCategories();
-  }
+  } */
 
   select = () => {
-    let o = this.categories.find((x) => x.name === this.category);
+    let o = this.fsq.categories.find((x) => x.name === this.category);
     this.seo.sendEvent('Search by catergory', `${o.name}`);
     this.go(o.id);
   };
@@ -66,7 +65,7 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
     });
   };
 
-  processCategories = () => {
+  /*  processCategories = () => {
     this.fsq.categories = this.categories;
     this.categories.sort((a, b) =>
       a.name > b.name ? 1 : b.name > a.name ? -1 : 0
@@ -75,7 +74,7 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
       return cat.name;
     });
     console.log('processCategories', this.categories);
-  };
+  }; */
 
   /* getCategories() {
     const url = this.jsonblob + this.jsonblobCategories;
