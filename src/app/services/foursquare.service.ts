@@ -81,15 +81,6 @@ export class FoursquareService {
     });
   }
 
-  /* processCategories = () => {
-    this.categories.sort((a, b) =>
-      a.name > b.name ? 1 : b.name > a.name ? -1 : 0
-    );
-    this.categoriesSimple = this.categories.map((cat, index) => {
-      return cat.name;
-    });
-  }; */
-
   getIcon(venue: any) {
     if (!venue.categories) {
       return;
@@ -244,7 +235,6 @@ export class FoursquareService {
   }
 
   processVenue(venue: any) {
-    //venue.icon = this.getIcon(venue);
     this.trimUrl(venue);
     this.buildGallery(venue);
     this.processTips(venue);
