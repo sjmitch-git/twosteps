@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable, OperatorFunction } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
-import data from '../../../assets/data/categories.json';
+import { CategoriesService } from '../../data/categories.service';
 
 import { SeoService } from '../../services/seo.service';
 import { FoursquareService } from '../../services/foursquare.service';
@@ -24,8 +24,11 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
     private httpClient: HttpClient,
     private router: Router,
     private fsq: FoursquareService,
-    private seo: SeoService
-  ) {}
+    private seo: SeoService,
+    public categoriesService: CategoriesService
+  ) {
+    this.categories = categoriesService.data;
+  }
 
   ngOnInit(): void {}
 
@@ -64,7 +67,7 @@ export class FindcategoryComponent implements OnInit, AfterViewInit {
   };
 
   processCategories = () => {
-    this.fsq.categories = this.categories = data;
+    this.fsq.categories = this.categories;
     this.categories.sort((a, b) =>
       a.name > b.name ? 1 : b.name > a.name ? -1 : 0
     );
