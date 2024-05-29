@@ -1,5 +1,5 @@
 User-Agent: *
-Disallow:
+Disallow: /venue
 
 User-agent: SemrushBot
 Disallow: /
